@@ -1048,33 +1048,15 @@ footer {
 /* =========================================
    MOBILE SNAP / PARALLAX / TOUCH EFFECT
 ========================================= */
+/* ========== MOBILNO: vertikalno raspoređivanje, pun width ========== */
 @media (max-width: 768px) {
   .category-split {
     flex-direction: column;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    gap: 20px;
   }
-
   .category-block {
-    height: 100vh;
-    flex: none;
-    scroll-snap-align: start;
-    background-attachment: fixed; /* parallax */
-  }
-
-  .category-block h2 {
-    font-size: 2.2rem;
-    text-shadow: 0 0 10px rgba(0,0,0,0.6);
-  }
-
-  .category-block:active .overlay {
-    background: rgba(0,0,0,0.2);
-  }
-}
-
-@media (max-width: 480px) {
-  .category-block h2 {
-    font-size: 1.8rem;
+    flex: 1 1 100%;
+    width: 100%;
+    height: 200px; /* možeš prilagoditi */
   }
 }
