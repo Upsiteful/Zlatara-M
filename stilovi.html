@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo palete boja i stilova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    .block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 40px;
+      gap: 40px;
+      width: 100%;
+      box-sizing: border-box;
+      height: 400px;
+    }
+    .block img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .block-text {
+      flex: 1;
+    }
+    .block h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+    .block p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    /* 10 različitih stilova */
+    .style1 { background: #fdf6e3; color: #b58900; font-family: 'Playfair Display', serif; }
+    .style2 { background: #1b2a1f; color: #d4af37; font-family: 'Roboto', sans-serif; }
+    .style3 { background: #e0f7fa; color: #00695c; font-family: 'Montserrat', sans-serif; }
+    .style4 { background: #fffaf0; color: #c0392b; font-family: 'Playfair Display', serif; }
+    .style5 { background: #2c3e50; color: #ecf0f1; font-family: 'Roboto', sans-serif; }
+    .style6 { background: #0a3d2d; color: #ffd700; font-family: 'Montserrat', sans-serif; }
+    .style7 { background: #3e2c2a; color: #f1c40f; font-family: 'Playfair Display', serif; }
+    .style8 { background: #e8eaf6; color: #3f51b5; font-family: 'Roboto', sans-serif; }
+    .style9 { background: #ffe4e1; color: #c71585; font-family: 'Montserrat', sans-serif; }
+    .style10 { background: #f4f1de; color: #6b4226; font-family: 'Playfair Display', serif; }
+
+    @media (max-width: 900px) {
+      .block {
+        flex-direction: column;
+        text-align: center;
+      }
+      .block img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="block style1">
+  
+  <div class="block-text">
+    <h2>Topli luksuz</h2>
+    <p>Naša kolekcija zlatnog nakita odiše toplinom i elegancijom. Idealno za posebne prilike i poklone koji se pamte.</p>
+  </div>
+</div>
+
+<div class="block style2">
+ 
+  <div class="block-text">
+    <h2>Elegancija u zelenom</h2>
+    <p>Ovaj stil kombinuje tamno zelenu pozadinu sa zlatnim detaljima, savršeno za sofisticirani izgled nakita.</p>
+  </div>
+</div>
+
+<div class="block style3">
+ 
+  <div class="block-text">
+    <h2>Savremeni srebrni sjaj</h2>
+    <p>Minimalistički i moderni dizajn, sa naglaskom na srebro i čiste linije koje ističu lepotu nakita.</p>
+  </div>
+</div>
+
+<div class="block style4">
+  
+  <div class="block-text">
+    <h2>Vintage toplina</h2>
+    <p>Kolekcija ručno rađenih komada sa vintage šarmom, koja će se isticati u svakom trenutku.</p>
+  </div>
+</div>
+
+<div class="block style5">
+  
+  <div class="block-text">
+    <h2>Profesionalni luksuz</h2>
+    <p>Moderan i sofisticiran stil, koji kombinuje eleganciju i jednostavnost, idealan za poslovni ambijent.</p>
+  </div>
+</div>
+
+<div class="block style6">
+  
+  <div class="block-text">
+    <h2>Zlatno-zelena elegancija</h2>
+    <p>Bogate zlatno-zelene kombinacije koje odišu luksuzom i sofisticiranošću.</p>
+  </div>
+</div>
+
+<div class="block style7">
+  
+  <div class="block-text">
+    <h2>Tamni luksuz</h2>
+    <p>Ovaj stil koristi tamne tonove sa zlatnim naglascima za dramatičan i elegantan efekat.</p>
+  </div>
+</div>
+
+<div class="block style8">
+ 
+  <div class="block-text">
+    <h2>Metallic modern</h2>
+    <p>Svetli metalik tonovi i minimalistički dizajn, naglašavajući moderan duh nakita.</p>
+  </div>
+</div>
+
+<div class="block style9">
+ 
+  <div class="block-text">
+    <h2>Romantična elegancija</h2>
+    <p>Pastelne boje i nežni detalji čine ovaj stil savršenim za romantične poklone.</p>
+  </div>
+</div>
+
+<div class="block style10">
+  
+  <div class="block-text">
+    <h2>Prirodni chic</h2>
+    <p>Ekološki i prirodni tonovi sa detaljima od drveta i kože, idealno za ljubitelje prirode.</p>
+  </div>
+</div>
+
+</body>
+</html>
