@@ -618,7 +618,7 @@ html {
 
   /* HERO: smanjena visina na mobilu */
   .hero {
-    height: 60vh;
+    height: 100vh;
   }
   .hero-content h1 {
     font-size: 2rem;
@@ -1060,3 +1060,4 @@ footer {
     height: 200px; /* možeš prilagoditi */
   }
 }
+
