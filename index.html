@@ -41,7 +41,14 @@
 </header>
 
 <section class="hero">
-  <img class="hero-bg" src="ChatGPT Image Nov 8, 2025, 01_51_02 PM.png" alt="Zlatara hero slika" />
+  <picture class="hero-bg">
+  <!-- mobilna verzija -->
+  <source srcset="hero-mobile.png" media="(max-width: 768px)">
+  <!-- desktop verzija -->
+  <source srcset="hero-desktop.png" media="(min-width: 769px)">
+  <!-- fallback (ako browser ne podržava source) -->
+  <img src="hero-desktop.png" alt="Vereničko prstenje" class="hero-bg">
+</picture>
   <div class="hero-content">
     <h1>Vereničko prstenje</h1>
     <a href="proizvodi.html" class="cta-btn">Pogledaj ponudu</a>
@@ -696,4 +703,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
