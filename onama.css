@@ -14,9 +14,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f2e6d8; 
+  background-color: #fdf6e3; 
   padding: 15px 40px;
-  color: #d4af37; /* zlatna */
+  color: #b58900; /* zlatna */
   border-bottom: white 2px solid; /* tamnija braon nijansa */
 }
 
@@ -39,7 +39,7 @@ html, body {
 
 .navbar a {
   text-decoration: none;
-  color:  #3b2f2f; /* tamnija braon nijansa */
+  color:  #b58900; /* tamnija braon nijansa */
   font-weight: 500;
   font-size: 14px;
   transition: color 0.2s ease;
@@ -57,7 +57,7 @@ html, body {
   margin: 100px auto;
   padding: 0 20px;
   font-family: 'Playfair Display', serif;
-  color: #3b2f2f;
+  color: #b58900;
 }
 
 .about-row {
@@ -79,13 +79,13 @@ html, body {
 .about-text h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #d4af37;
+  color: #b58900;
 }
 
 .about-text p {
   font-size: 1.5vw;
   line-height: 1.8;
-  color: #444;
+  color: #b58900;
   max-width: 600px;
 }
 
@@ -111,7 +111,7 @@ html, body {
 }
 
 body{
-    background-color:#f2e6d8;
+    background-color:#fdf6e3;
 }
 
 
@@ -131,7 +131,7 @@ body{
   background-color: transparent;
   padding: 80px 40px;
   font-family: 'Playfair Display', serif;
-  color: #3b2f2f;
+  color: #b58900;
 }
 
 .location-wrapper {
@@ -150,13 +150,13 @@ body{
 
 .location-info h2 {
   font-size: 2.4rem;
-  color: #1e1e1e;
+  color: #b58900;
   margin-bottom: 10px;
 }
 
 .location-info h3 {
   font-size: 1.6rem;
-  color: #b19777;
+  color: #b58900;
   margin-bottom: 20px;
 }
 
@@ -164,7 +164,7 @@ body{
   list-style: none;
   padding: 0;
   font-size: 1.1rem;
-  color: #555;
+  color: #b58900;
 }
 
 .location-info ul li {
@@ -650,3 +650,5 @@ html {
   outline: none;
   box-shadow: none;
 }
+
+
