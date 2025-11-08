@@ -1061,8 +1061,11 @@ footer {
     width: 100%;
     height: 200px; /* možeš prilagoditi */
   }
-  
+  .hero-bg {
+  height: 90%;
 }
+}
+
 
 
 
