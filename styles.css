@@ -9,16 +9,16 @@ html, body {
  
 }
 body{
-    background-color:#f2e6d8;
+    background-color: #fdf6e3;
 }
 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f2e6d8; 
+  background-color:  #fdf6e3; 
   padding: 15px 40px;
-  color: #d4af37; /* zlatna */
+  color:#b58900; /* zlatna */
 }
 
 .topbar .logo {
@@ -46,7 +46,7 @@ body{
 .brand-name .subtext {
   font-size: 14px;
   font-weight: 300;
-  color: #bfae84; /* svetlija zlatna */
+  color: #b58900; /* svetlija zlatna */
 }
 
 .navbar ul {
@@ -59,7 +59,7 @@ body{
 
 .navbar a {
   text-decoration: none;
-  color:  #3b2f2f; /* tamnija braon nijansa */
+  color:  #b58900; /* tamnija braon nijansa */
   font-weight: 500;
   font-size: 14px;
   transition: color 0.2s ease;
@@ -83,7 +83,7 @@ body{
     opacity: 0;
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 120vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -99,7 +99,7 @@ body{
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(0.7); /* da pozadina bude malo tamnija */
+  filter: brightness(1); /* da pozadina bude malo tamnija */
 }
 
 .hero-content {
@@ -109,19 +109,23 @@ body{
 }
 
 .hero-content h1 {
-  color: #3b2f2f; /* tamnija braon nijansa */
+   /*background: rgba(0, 0, 0, 0.35);*/
+  color:#D9B55A; /*#F6E2A1; /* svetlija zlatna */
+  padding: 8px 16px;
+  border-radius: 6px;
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: "Cinzel", serif;
   font-optical-sizing: auto;
 
   font-style: normal;
+  margin-bottom: 30px;
 }
 
 
 .cta-btn {
-  background-color: #e63924;
-  color: white;
+  background-color: #B38728;
+  color: #FFF8E7;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 2%;
@@ -129,6 +133,7 @@ body{
   text-decoration: none;
   transition: background 0.3s ease;
   padding: 40 60px;
+  
 }
 
 .cta-btn:hover {
@@ -165,21 +170,21 @@ body{
   font-size: 2rem;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
-  color: #3b2f2f;
+  color:#b58900;
   /*animation: slideIn1 3s ease forwards; /* animacija za ulazak teksta */
 }
 
 .categories .divider {
   width: 100px;
   border: none;
-  border-top: 2px solid #c89b62;
+  border-top: 2px solid #b58900;
   margin: 0.5rem auto 1rem;
 }
 
 .categories p {
     /*transform: translateX(500px);
     opacity: 0;*/
-  color: #3b2f2f;
+  color: #b58900;
   font-style: italic;
   max-width: 600px;
   margin: 0 auto 1rem;
@@ -198,7 +203,7 @@ body{
   background: #fafafa;
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.08);
+  box-shadow: 0 0 5px #b58900;
   transition: transform 0.3s ease;
   height: 450px;
 }
@@ -218,7 +223,7 @@ body{
 .category-item h3 {
   font-size: 2vw;
   margin: 0.5rem 0;
-  color: #3b2f2f;
+  color: #b58900;
 }
 
 .category-item a {
@@ -244,17 +249,17 @@ body{
 .new-products {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: white;
+  background-color: #fdf6e3;
   font-family: 'Playfair Display', serif;
 }
 
 .new-products h2 {
-  color: #3b2f2f;
+  color: #b58900;
   font-size: 2.5rem;
 }
 
 .new-products p {
-  color: #777;
+  color:#b58900;
   margin-bottom: 2rem;
 }
 
@@ -619,7 +624,6 @@ html {
   /* HERO: smanjena visina na mobilu */
   .hero {
     height: 100vh;
-    margin-bottom: 20px;
   }
   .hero-content h1 {
     font-size: 2rem;
@@ -1046,33 +1050,21 @@ footer {
   transition: 0.3s ease;
 }
 
-/* =========================================
-   MOBILE SNAP / PARALLAX / TOUCH EFFECT
-========================================= */
 /* ========== MOBILNO: vertikalno raspoređivanje, pun width ========== */
-/* Na mobilnom neka budu vertikalno, puna širina */
 @media (max-width: 768px) {
   .category-split {
-    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 20px;
   }
-
-  .category-split .category-block {
+  .category-block {
+    flex: 1 1 100%;
     width: 100%;
-    height: auto; /* automatska visina */
-    min-height: 150px; /* po potrebi */
-    position: relative; /* ukloni apsolutno ako postoji */
+    height: 200px; /* možeš prilagoditi */
   }
-
-  .category-split .category-block .overlay {
-    position: absolute; /* ako želiš overlay, pazi da ne prekriva ostale */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
+  
 }
+
+
 
 
 
