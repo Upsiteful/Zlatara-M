@@ -311,7 +311,7 @@
   if (!slider || !track || !dotsContainer) return;
 
   const cards = Array.from(track.querySelectorAll('.product-card'));
-  let cardsPerSlide = (window.innerWidth <= 768) ? 2 : 4;
+  let cardsPerSlide = (window.innerWidth <= 768) ? 1 : 4;
   let slides = 1;
   let currentSlide = 0;
   let autoSlideInterval;
@@ -704,4 +704,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
 
