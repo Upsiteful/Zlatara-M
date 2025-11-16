@@ -1084,11 +1084,12 @@ footer {
     opacity: 1 !important;
   }
   .hero {
-    height: 25vh;
+    height: 40vh;
     
   }
  .hero-content h1 {
      margin-bottom: 0px;
   }
 }
+
 
