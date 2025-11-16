@@ -1093,3 +1093,39 @@ footer {
 }
 
 
+/* Mobilni: 1 proizvod po slide-u */
+@media (max-width: 768px) {
+  .product-track {
+    display: flex;
+  }
+
+  .product-card {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
