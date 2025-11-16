@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalji proizvoda | Zlatara</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Osnovni stil - uklapa se sa postojećim */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header, footer {
+      width: 100%;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    .product-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .product-info {
+      flex: 1 1 400px;
+    }
+
+    .product-info h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #b38b59;
+    }
+
+    .product-info p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #b38b59;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #a07a4d;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      color: #555;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      color: #b38b59;
+    }
+
+    @media (max-width: 768px) {
+      .product-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .order-button {
+  padding: 12px 20px;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.order-button:hover {
+  background: #b8952d;
+}
+
+/* Modal stil */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.order-button, .submit-order, .zavrsno-dugme {
+  padding: 12px 20px;
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.order-button:hover {
+  background: #b8952d;
+}
+
+/* Modal stil */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+  </style>
+ 
+
+
+</head>
+<body>
+
+  <!-- HEADER možeš zameniti svojim postojećim -->
+ 
+
+  <main>
+    <div class="product-container" id="product-details">
+      <!-- JS učitava ovde -->
+    </div>
+    <!-- <a href="proizvodi.html" class="back-link">← Nazad na kolekciju</a> -->
+    <!-- Dugme za poručivanje -->
+
+
+<!-- Modal za naručivanje -->
+<!-- Dugme za poručivanje -->
+
+
+<!-- Modal za naručivanje -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Poručivanje proizvoda</h2>
+
+ <form id="form">
+  <div class="field">
+    <label for="product">product</label>
+    <input type="text" name="product" id="product" readonly>
+  </div>
+  <div class="field">
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+  </div>
+  <div class="field">
+    <label for="phone">phone</label>
+    <input type="text" name="phone" id="phone">
+  </div>
+  <div class="field">
+    <label for="email">email</label>
+    <input type="text" name="email" id="email">
+  </div>
+  <div class="field">
+    <label for="address">address</label>
+    <input type="text" name="address" id="address">
+  </div>
+
+  <input type="submit" id="button" value="Poruči" class="zavrsno-dugme">
+</form>
+
+
+
+
+<p id="msg" style="color: green; display:none;">Porudžbina uspešno poslata! ✅</p>
+
+  </div>
+</div>
+
+
+  </main>
+
+  <footer>
+    <p style="text-align:center; padding:20px; font-size:14px; color:#888;">
+      © 2025 Zlatara. Sva prava zadržana.
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("xDh7yX1H6scPpf4uk");
+console.log("JS fajl se učitao ✅");
+
+   const proizvodi = [
+  {
+    id: 1,
+    naziv: "Prsten od zlata",
+    opis: "Elegantni prsten sa dijamantom izrađen od kvalitetnog zlata. Savršen za posebne prilike.",
+    cena: "50.000 RSD",
+    slika: "prsten od zlata.jpg"
+  },
+  {
+    id: 2,
+    naziv: "Srebrna ogrlica",
+    opis: "Lepa srebrna ogrlica sa ukrasima, idealna za svakodnevno nošenje.",
+    cena: "25.000 RSD",
+    slika: "srebrna ogrlica.webp"
+  },
+  {
+    id: 3,
+    naziv: "Narukvica od platine",
+    opis: "Moderan dizajn platinske narukvice, ručno izrađena sa prefinjenim detaljima.",
+    cena: "75.000 RSD",
+    slika: "narukvica od platine.jpg"
+  },
+  {
+    id: 4,
+    naziv: "Prsten sa smaragdom",
+    opis: "Srebrni prsten sa prelepim zelenim smaragdom, simbol elegancije i stila.",
+    cena: "60.000 RSD",
+    slika: "prsten sa smaragdom.jpg"
+  },
+  {
+    id: 5,
+    naziv: "Ogrlica sa perlama",
+    opis: "Ogrlica od srebra sa belim perlama, klasičan dodatak svakoj kombinaciji.",
+    cena: "30.000 RSD",
+    slika: "ogrlica sa belim perlama.jpg"
+  },
+  {
+    id: 6,
+    naziv: "Srebrna narukvica",
+    opis: "Jednostavna srebrna narukvica, odličan poklon ili dodatak uz elegantni sat.",
+    cena: "20.000 RSD",
+    slika: "srebrna narukvica.jpg"
+  },
+  {
+    id: 7,
+    naziv: "Zlatni prsten sa rubinom",
+    opis: "Prelep prsten od zlata sa crvenim rubinom, simbol ljubavi i strasti.",
+    cena: "85.000 RSD",
+    slika: "prsten sa crvenim rubinom.jpg"
+  },
+  {
+    id: 8,
+    naziv: "Platinska ogrlica",
+    opis: "Elegantna ogrlica od platine, moderan i luksuzan izgled.",
+    cena: "90.000 RSD",
+    slika: "platinska ogrlica.avif"
+  },
+  {
+    id: 9,
+    naziv: "Zlatni sat Classic",
+    opis: "Luksuzni zlatni sat sa kožnim kaišem, spoj tradicije i modernog dizajna.",
+    cena: "120.000 RSD",
+    slika: "zlatni sat classic.webp"
+  },
+  {
+    id: 10,
+    naziv: "Srebrni prsten sa topazom",
+    opis: "Srebrni prsten sa plavim topazom, elegantan izbor za svaku priliku.",
+    cena: "45.000 RSD",
+    slika: "prsten sa plavim topazom.jpeg"
+  },
+  {
+    id: 11,
+    naziv: "Platinska narukvica sa dijamantima",
+    opis: "Ručna izrada sa pažljivo ugrađenim dijamantima, ekskluzivna narukvica od platine.",
+    cena: "95.000 RSD",
+    slika: "platinska narukvica dijamanti.avif"
+  },
+  {
+    id: 12,
+    naziv: "Zlatna ogrlica Vintage",
+    opis: "Retro dizajn zlatne ogrlice inspirisan klasičnim nakitom prošlog veka.",
+    cena: "70.000 RSD",
+    slika: "zlatna ogrlica vintage.jpg"
+  },
+  {
+    id: 13,
+    naziv: "Srebrni sat Modern",
+    opis: "Moderan srebrni sat sa metalnim kaišem, praktičan i elegantan dodatak.",
+    cena: "55.000 RSD",
+    slika: "srebri sat modern.jpg"
+  },
+  {
+    id: 14,
+    naziv: "Zlatni zlatnik sa motivom",
+    opis: "Dekorativni zlatnik sa pažljivo izrađenim motivom, idealan za kolekcionare.",
+    cena: "30.000 RSD",
+    slika: "zlatni zlatnik.jpg"
+  },
+  {
+    id: 15,
+    naziv: "Platinski prsten sa safirom",
+    opis: "Ekskluzivan prsten od platine sa plavim safirom vrhunskog kvaliteta.",
+    cena: "105.000 RSD",
+    slika: "platinski prsten safir.jpg"
+  },
+  {
+    id: 16,
+    naziv: "Srebrna narukvica sa cirkonima",
+    opis: "Narukvica od srebra ukrašena sitnim cirkonima koji blistaju na svetlu.",
+    cena: "35.000 RSD",
+    slika: "srebrna narukvica cirkoni.png"
+  },
+  {
+    id: 17,
+    naziv: "Zlatni sat Elegant",
+    opis: "Elegantni zlatni sat visokog sjaja, savršen dodatak za svaku priliku.",
+    cena: "130.000 RSD",
+    slika: "zlatni sat elegant.jpg"
+  },
+  {
+    id: 18,
+    naziv: "Ogrlica sa platinom i dijamantima",
+    opis: "Ogrlica od platine sa dijamantima — spoj luksuza i vrhunske izrade.",
+    cena: "110.000 RSD",
+    slika: "platinska ogrlica dijamanti.jpg"
+  },
+  {
+    id: 19,
+    naziv: "Srebrni zlatnik sa grbom",
+    opis: "Kolekcionarski srebrni zlatnik sa prefinjenim grbom u sredini.",
+    cena: "25.000 RSD",
+    slika: "srebrni zlatnik grb.webp"
+  },
+  {
+    id: 20,
+    naziv: "Zlatna narukvica Classic",
+    opis: "Klasična zlatna narukvica izrađena od 14k zlata, bezvremenski komad nakita.",
+    cena: "65.000 RSD",
+    slika: "zlatna narukvica classic.webp"
+  },
+  {
+    id: 21,
+    naziv: "Platinski sat Luxury",
+    opis: "Luksuzni sat od platine, precizan mehanizam i besprekoran dizajn.",
+    cena: "150.000 RSD",
+    slika: "platinski sat luxury.webp"
+  },
+  {
+    id: 22,
+    naziv: "Prsten od srebra sa granatom",
+    opis: "Srebrni prsten sa crvenim granatom — elegantan izbor sa dozom luksuza.",
+    cena: "40.000 RSD",
+    slika: "prsten srebro granat.avif"
+  },
+  {
+    id: 23,
+    naziv: "Zlatna ogrlica sa smaragdom",
+    opis: "Zlatna ogrlica ukrašena prirodnim zelenim smaragdom, izuzetno elegantna.",
+    cena: "95.000 RSD",
+    slika: "zlatna ogrlica sa smaragdom.jpg"
+  }
+];
+
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOMContentLoaded event radi ✅");
+        console.log("Form element:", document.getElementById("form"));
+
+      const params = new URLSearchParams(window.location.search);
+      const proizvod = proizvodi.find(p => p.id === parseInt(params.get("id")));
+      const container = document.getElementById("product-details");
+
+      if (proizvod) {
+        container.innerHTML = `
+          <div class="product-image"><img src="${proizvod.slika}" alt="${proizvod.naziv}"></div>
+          <div class="product-info">
+            <h1>${proizvod.naziv}</h1>
+            <p>${proizvod.opis}</p>
+            <div class="price">${proizvod.cena}</div>
+            <button id="orderBtn" class="order-button" >Poruči ovaj proizvod</button>
+          </div>`;
+      } else {
+        container.innerHTML = `<p style="text-align:center;">Proizvod nije pronađen.</p>`;
+      }
+
+      // modal logika
+      const modal = document.getElementById("orderModal");
+      const btn = document.getElementById("orderBtn");
+      const close = document.querySelector(".close");
+
+      btn.onclick = () => {
+        modal.style.display = "block";
+        document.getElementById("product").value = document.querySelector(".product-info h1").innerText;
+      };
+
+      close.onclick = () => modal.style.display = "none";
+      window.onclick = e => (e.target === modal) && (modal.style.display = "none");
+
+      // slanje forme
+      /*document.getElementById("form").addEventListener("submit", function(e) {*/
+    document.getElementById("button").addEventListener("click", e => {
+  e.preventDefault();
+  console.log("Klik radi ✅");
+
+  const form = document.getElementById("form");
+  const btn2 = document.getElementById("button");
+  btn2.value = "Šaljem...";
+
+  emailjs.sendForm("service_8qua0pz", "template_4cxdpb9", form)
+    .then(() => {
+      btn2.value = "Poslato!";
+      document.getElementById("msg").style.display = "block";
+      form.reset();
+      setTimeout(() => { 
+        document.getElementById("orderModal").style.display = "none"; 
+        btn2.value = "Pošalji narudžbinu"; 
+      }, 2000);
+    }, err => {
+      alert("Greška pri slanju: " + JSON.stringify(err));
+      btn2.value = "Pošalji narudžbinu";
+    });
+});
+
+
+    });
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luksuzni Katalog Fontova</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Bebas+Neue&family=Raleway:wght@400;700&family=Merriweather:wght@400;700&family=Pacifico&family=Dancing+Script&family=Poppins:wght@400;700&family=Josefin+Sans:wght@400;700&family=Zilla+Slab:wght@400;700&family=Montserrat:wght@400;700&family=Lobster&family=Oswald:wght@400;700&family=Amatic+SC:wght@400;700&family=Comfortaa:wght@400;700&family=Courgette&family=Abril+Fatface&family=Handlee&family=Cormorant+Garamond:wght@400;700&family=Fjalla+One&family=Satisfy&family=Kaushan+Script&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f8f5ef;
+      --gold:#b8860b;
+      --card:#fffdf8;
+      --shadow:rgba(0,0,0,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--gold);
+      padding:40px 16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      font-family:'Playfair Display',serif;
+    }
+    h1{
+      font-family:'Cinzel',serif;
+      font-size:48px;
+      margin-bottom:8px;
+      text-align:center;
+      color:var(--gold);
+      letter-spacing:2px;
+    }
+    p.subtitle{
+      text-align:center;
+      font-family:'Cormorant Garamond',serif;
+      color:#a78634;
+      max-width:600px;
+      margin-bottom:40px;
+    }
+    .font-card{
+      width:100%;
+      max-width:800px;
+      background:var(--card);
+      border-radius:16px;
+      box-shadow:0 4px 12px var(--shadow);
+      padding:24px;
+      margin-bottom:24px;
+      text-align:center;
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .font-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px var(--shadow);
+    }
+    .font-name{
+      font-size:20px;
+      font-family:'Cinzel',serif;
+      margin-bottom:12px;
+      color:#9c7b24;
+      letter-spacing:1px;
+    }
+    .sample{
+      font-size:30px;
+      color:var(--gold);
+    }
+    footer{
+      margin-top:60px;
+      font-family:'Cormorant Garamond',serif;
+      color:#a78634;
+      font-size:14px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Katalog Fontova</h1>
+  <p class="subtitle">Pregled dvadeset pet jedinstvenih fontova u elegantnom, zlatno-krem stilu. Svaki ima svoj karakter i izražajnost.</p>
+
+  <script>
+    const fonts = [
+      'Cinzel','Playfair Display','Great Vibes','Bebas Neue','Raleway','Merriweather','Pacifico','Dancing Script','Poppins','Josefin Sans','Zilla Slab','Montserrat','Lobster','Oswald','Amatic SC','Comfortaa','Courgette','Abril Fatface','Handlee','Cormorant Garamond','Fjalla One','Satisfy','Kaushan Script','Quicksand','Raleway Dots'
+    ];
+
+    const container = document.body;
+
+    fonts.forEach(f => {
+      const div = document.createElement('div');
+      div.className = 'font-card';
+      div.style.fontFamily = `'${f}', sans-serif`;
+      const name = document.createElement('div');
+      name.className = 'font-name';
+      name.textContent = f;
+      const sample = document.createElement('div');
+      sample.className = 'sample';
+      sample.textContent = 'Luksuz počinje od elegancije i pažnje prema detaljima.';
+      div.appendChild(name);
+      div.appendChild(sample);
+      container.appendChild(div);
+    });
+  </script>
+
+  <footer>
+    Savet: Svaki font ima svoj ton — izaberite onaj koji najviše odražava dušu vašeg brenda.
+  </footer>
+</body>
+</html>
