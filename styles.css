@@ -1067,20 +1067,28 @@ footer {
     height: 200px; /* možeš prilagoditi */
   }
 .hero-bg {
-  height: 90%;
+  height: 100%;
 }
   
 }
-
 @media (max-width: 768px) {
   .category-block {
     transform: none !important;
     filter: none !important;
     opacity: 1 !important;
+    flex: 1;
   }
    .category-block .overlay{
     transform: none !important;
     filter: none !important;
     opacity: 1 !important;
   }
+  .hero {
+    height: 25vh;
+    
+  }
+ .hero-content h1 {
+     margin-bottom: 0px;
+  }
 }
+
