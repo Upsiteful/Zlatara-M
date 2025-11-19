@@ -85,6 +85,9 @@ html, body {
   font-size: 32px;
   color:#b58900;
   margin-bottom: 20px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .button-link {
@@ -102,7 +105,9 @@ html, body {
   color: #b58900;
   margin-bottom: 16px;
   font-weight: 300;
-  font-family: 'Segoe UI', sans-serif; /* ili 'Poppins' ako koristiš taj font */
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .section-heading {
@@ -116,6 +121,9 @@ html, body {
   color: #b58900;
   font-weight: 600;
   margin-bottom: 10px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .section-heading p {
@@ -124,6 +132,9 @@ html, body {
   font-weight: 300;
   margin: 0 auto;
   max-width: 600px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .section-divider {
@@ -884,3 +895,9 @@ html {
     line-height: 1.5;
   }
 }
+footer{
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
