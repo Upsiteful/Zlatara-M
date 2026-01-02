@@ -1,0 +1,843 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+ 
+}
+body{
+    background-color:#f2e6d8;
+}
+
+
+
+
+
+.size-guide-section {
+  padding: 60px 20px;
+  background-color: transparent;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.size-guide-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.size-item {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.size-item h2 {
+  font-size: 28px;
+  color: #3b2f2f;
+  margin-bottom: 10px;
+}
+
+.size-item p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.size-item img {
+ 
+  height: 550px;
+  width: auto; 
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+
+.ring-size-advice {
+  background-color: #f9f6f1;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.ring-size-advice p {
+  font-size: 20px;
+  color: #5a4c3f;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+ font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.gemstones-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #fff;
+}
+
+.section-title {
+  font-size: 3.2rem;
+  color: #3b2f2f;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.section-divider {
+  margin: 0 auto 2rem;
+  width: 120px;
+  height: 2px;
+  background-color: #b19777;
+  position: relative;
+}
+
+.section-divider .icon {
+  position: absolute;
+  left: 50%;
+  top: -12px;
+  transform: translateX(-50%);
+  background: #f2e6d8;
+  padding: 0 0.6rem;
+  font-size: 1.4rem;
+  color: #b19777;
+}
+
+.section-subtitle {
+  color: #6a5845;
+  font-size: 20px;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+ font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.gemstone-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* tačno dva u redu */
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gemstone-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: #f8f6f2;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.gemstone-item:hover {
+  transform: scale(1.03);
+}
+
+.gemstone-item img {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.04);
+}
+
+.gemstone-item p {
+  margin-top: 1.5rem;
+  font-size: 22px;
+  font-weight: 600;
+  color: #b19777;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+
+.gold-section {
+  padding: 60px 20px;
+  /*background-color: #fff;*/
+    background-color: transparent;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #3b2f2f;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #3b2f2f;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-divider {
+  display: inline-block;
+  margin: 10px auto;
+  border-bottom: 2px solid #d4af37;
+  width: 80px;
+  position: relative;
+}
+
+.section-divider span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  /*background-color: white;*/
+    background-color: transparent;
+  color: #d4af37;
+  font-size: 18px;
+  padding: 0 6px;
+}
+
+
+.section-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #7a7a7a;
+  line-height: 1.6;
+}
+
+.gold-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.gold-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.gold-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.gold-image img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.metal-section {
+  padding: 80px 40px;
+  /*background-color: #fff;*/
+  background-color: transparent;
+  color: #666;
+  max-width: 100%;
+  margin: 0 auto;
+ 
+}
+
+.metal-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.metal-heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #444;
+}
+
+/*.section-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 20px;
+  width: fit-content;
+}
+
+.section-divider .line {
+  flex: 1;
+  height: 2px;
+  background-color: #c8a96a;
+  margin: 0 10px;
+  min-width: 40px;
+}
+
+.section-divider .icon {
+  font-size: 20px;
+  color: #c8a96a;
+}
+*/
+
+.subtitle {
+  font-size: 16px;
+  color: #7a7a7a;
+  line-height: 1.6;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.metal-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.metal-content.reverse {
+  flex-direction: row;
+}
+
+.metal-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6a6a6a;
+}
+
+.metal-text p {
+  margin-bottom: 20px;
+}
+
+.metal-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.metal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+    /* --- Sklanja Google bar i ikonice --- */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    html body > .skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+html {
+    top: 0 !important;
+}
+
+
+
+
+/**/
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2e6d8; 
+  padding: 15px 40px;
+  color: #d4af37; /* zlatna */
+}
+
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar .logo img {
+  height: 100px; /* prilagodi po potrebi */
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color:  #3b2f2f; /* tamnija braon nijansa */
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+/* --- Stil za zastavice (desktop default, NE fiksira poziciju) --- */
+.language-switcher {
+  position: static;       /* ne fiksiramo desktop, mobile media query će promeniti ponašanje */
+  display: flex;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  align-items: center;
+  z-index: 0;
+}
+
+.language-switcher img {
+  width: 24px;
+  height: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+
+    /* --- Sklanja Google bar i ikonice --- */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    html body > .skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+html {
+    top: 0 !important;
+}
+
+/* --- HAMBURGER (default sakriven za desktop) --- */
+.hamburger {
+  display: none;
+  z-index: 20;
+}
+/* ========== MOBILNI telefonski stilovi (REPLACEMENT) ========== */
+@media (max-width: 768px) {
+
+  /* prikrij desktop navigaciju (prikazaćemo preko .navbar.active) */
+  .navbar ul {
+    display: none;
+  }
+
+  /* TOPBAR: languages LEVO (kompresovano), logo CENTAR, hamburger DESNO */
+  .topbar {
+    position: relative;
+    padding: 20px 32px;
+    height: 80px;
+    align-items: center;
+  }
+
+  /* Kompresovan language-switcher: prikaži samo prvu ikonu, na klik se širi */
+  .language-switcher {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 60;
+    order: 1;
+    cursor: pointer;
+  }
+
+  /* male ikone (default prikaz samo prve) */
+  .language-switcher img {
+    width: 28px;
+    height: 18px;
+    border: 1px solid #ddd;
+    display: inline-block;
+  }
+  /* sakrij sve osim prve (desktop ne dira) */
+  .language-switcher img:not(:first-child) {
+    display: none;
+  }
+
+  /* kada je otvoreno (dodajemo .open) - prikaži sve ikone u koloni */
+  .language-switcher.open {
+    position: absolute;
+    left: 12px;
+    top: 62px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    flex-direction: column;
+    gap: 8px;
+  }
+  .language-switcher.open img {
+    display: block;
+  }
+
+  /* centriraj logo apsolutno u topbaru */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    order: 2;
+    z-index: 65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topbar .logo img {
+    height: 72px; /* smanjeno na mobilu */
+  }
+
+  /* hamburger desno */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #3b2f2f;
+    order: 3;
+    position: relative;
+    right: 8px;
+    z-index: 70;
+    margin-left: auto;
+  }
+
+  /* mobilni meni (prikaže se kada .navbar.active) */
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    background: #f2e6d8;
+    border-radius: 12px;
+    position: absolute;
+    right: 12px;
+    top: 80px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 50;
+    min-width: 200px;
+    display: none;
+  }
+  .navbar.active ul {
+    display: flex;
+  }
+
+  /* Ako je mobilni meni otvoren, daj prostor za jezički meni (ako koristiš body.menu-open) */
+  body.menu-open .language-switcher {
+    position: static;
+    margin-top: 8px;
+    right: auto;
+    top: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 8px;
+  }
+}
+.lang-toggle-badge {
+  display: none;                 /* sakriveno na desktopu */
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2f2f;
+  cursor: pointer;
+  transition: transform .12s ease;
+}
+.lang-toggle-badge:active { transform: scale(.96); }
+.lang-toggle-badge i { font-size: 18px; display:block; line-height:1; }
+
+/* MOBILE OVERRIDE */
+@media (max-width: 768px) {
+  .topbar { position: relative; z-index: 100; }
+
+  /* postavimo .language-switcher kao absolute kontrolu unutar topbara,
+     tako da nikad ne utiče na flow i ne menja visinu topbara */
+  .language-switcher {
+    position: absolute !important;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 120;
+    padding: 0;
+    background: transparent;
+    width: 36px;
+    height: 36px;
+    overflow: visible;
+  }
+
+  /* prikaži samo globus (dugme) umesto zastavica */
+  .lang-toggle-badge { display: inline-flex; background: transparent; box-shadow: none; }
+
+  /* sakrij zastavice dok meni nije otvoren */
+  .language-switcher img {
+    display: none !important;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+
+  /* PLUTAJUCI OBLAK - NE MENJA VISINU TOPBARA */
+  .language-switcher.open {
+    position: fixed;               /* fixed -> držimo ga u viewport prostoru */
+    left: 12px;
+    /* top ili bottom ćemo setovati dinamički iz JS-a; ovde fallback */
+    top: calc(100% + 8px);
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.18);
+    z-index: 140;
+    min-width: 140px;
+    max-height: calc(100vh - 90px);
+    overflow: auto;
+  }
+
+  .language-switcher.open img {
+    display: block !important;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+
+  /* sprečavamo da topbar "skače" - fallback min-height */
+  .topbar { min-height: 56px; }
+  .topbar { position: relative !important; z-index: 200 !important; }
+
+  /* kada je otvoren overlay, pustimo JS da postavi top; resetujemo calc rule koji ga je pomerao dole */
+  .language-switcher.open {
+    position: fixed !important;   /* JS će ažurirati top-left */
+    top: auto !important;
+    left: 12px !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+
+  /* i osiguravamo da u closed state nema neželjenog transform-a kad JS radi pixel positioning */
+  .language-switcher { transform: none !important; }
+}
+/* ===== LANGUAGE SWITCHER OVERLAY (append) ===== */
+.lang-overlay {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #f2e6d8; /* ili stavi istu boju koju koristi tvoj sajt za background */
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.15);
+  z-index: 9999;
+  min-width: 100px;       /* smanjeno da nema praznog prostora desno */
+  max-width: 140px;       /* sprečava preširoko */
+  align-items: center;    /* centriraj zastave */
+}
+
+.lang-overlay img {
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: block;
+}
+
+.lang-overlay img {
+  width: 36px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  display: block;
+}
+
+/* malo lepši hover */
+.lang-overlay img:hover {
+  transform: translateY(-2px);
+}
+
+/* zadržavamo globus stil (ako još nema) */
+.lang-toggle-badge { 
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2f2f;
+  cursor: pointer;
+}
+
+.lang-overlay img {
+  width: 32px;
+  height: 20px;
+}
+@media (min-width: 769px) {
+  .lang-toggle-badge {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #3b2f2f;
+  }
+
+  .navbar {
+    display: none;            /* default sakriveno */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #f2e6d8;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar.active {
+    display: flex;
+    height: 0px;  
+    padding: 0px;/* ovde se otvara kad klikneš */
+  }
+  
+  /***/
+
+
+  /* Mobile overlay meni — staviti unutar ili posle @media (max-width:768px) */
+
+
+
+}
+
+
+/* ukloni fokus krug sa globusa (samo vizuelno; :focus-visible za pristupačnost) */
+.lang-toggle-badge:focus,
+.language-switcher button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.lang-toggle-badge:focus-visible {
+  outline: 2px solid rgba(181,142,95,0.35);
+  border-radius: 50%;
+}
+
+.language-switcher button {
+  border: none;
+  outline: none;
+}
+
+.language-switcher button:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  /* Sekcija sa prstenom i ogrlicom */
+  .size-guide-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .size-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+
+  /* Gemstone galerija – 1 po redu */
+  .gemstone-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Zlato – stacked */
+  .gold-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gold-image img {
+    max-height: 350px;
+  }
+
+  /* Srebro – stacked */
+  .metal-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .metal-image img {
+    max-height: 350px;
+  }
+
+  /* General paddings manji */
+  .size-guide-section,
+  .gold-section,
+  .metal-section,
+  .gemstones-section {
+    padding: 30px 15px;
+  }
+}
