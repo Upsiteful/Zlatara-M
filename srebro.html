@@ -687,7 +687,13 @@ html {
   outline: none;
   box-shadow: none;
 }
-
+.navbar a {
+    text-decoration: none;
+    color: #b58900;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
   </style>
 </head>
 <body>
@@ -732,10 +738,10 @@ html {
       <label><input type="checkbox" class="filter" data-category="privezak"> Privesci</label>
     <label><input type="checkbox" class="filter" data-category="minđuše"> Minđuše</label>
     </div>
-    <div class="filter-price">
-      <h4>Cena do</h4>
-      <input type="range" id="priceRange" min="0" max="200000" step="1000" value="100000">
-      <span id="priceValue">100,000 RSD</span>
+   <div class="filter-price">
+      <h4>Gramaža do</h4>
+      <input type="range" id="priceRange" min="0" max="3" step="0.1" value="1.5">
+      <span id="priceValue">1,5 g</span>
     </div>
     <!-- <div class="filter-material">
       <h4>Materijal</h4>
@@ -872,7 +878,7 @@ html {
   function displayProducts() {
     const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked')).map(f=>f.dataset.category);
     const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked')).map(f=>f.dataset.material);
-    const maxPrice = parseInt(priceRange.value);
+    const maxPrice = parseFloat(priceRange.value);
 
     productList.innerHTML = '';
 
@@ -898,7 +904,7 @@ html {
 
   document.querySelectorAll('.filter').forEach(f=>f.addEventListener('change', displayProducts));
   priceRange.addEventListener('input', ()=>{
-    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' RSD';
+    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' g';
     displayProducts();
   });
 
@@ -1178,3 +1184,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
