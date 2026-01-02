@@ -687,7 +687,13 @@ html {
   outline: none;
   box-shadow: none;
 }
-
+.navbar a {
+    text-decoration: none;
+    color: #b58900;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
   </style>
 </head>
 <body>
@@ -726,16 +732,16 @@ html {
     <h3>Filteri</h3>
     <div class="filter-category">
       <h4>Kategorija</h4>
-      <label><input type="checkbox" class="filter" data-category="prstenje"> Prstenje</label>
-      <label><input type="checkbox" class="filter" data-category="mindjuse"> Minđuše</label>
-      <label><input type="checkbox" class="filter" data-category="narukvice"> Privesci</label>
-  
+      <label><input type="checkbox" class="filter" data-category="prsten"> Prstenje</label>
+   
+      <label><input type="checkbox" class="filter" data-category="privezak"> Privesci</label>
+  <label><input type="checkbox" class="filter" data-category="ogrlica"> Ogrlice</label>
     </div>
-    <div class="filter-price">
+    <!-- <div class="filter-price">
       <h4>Cena do</h4>
       <input type="range" id="priceRange" min="0" max="200000" step="1000" value="100000">
       <span id="priceValue">100,000 RSD</span>
-    </div>
+    </div> -->
     <!-- <div class="filter-material">
       <h4>Materijal</h4>
       <label><input type="checkbox" class="filter" data-material="zlato"> Zlato</label>
@@ -808,90 +814,91 @@ html {
 <script>
   const products = [
    
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika1.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika1.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika2.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika3.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika4.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika4.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika5.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika6.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika7.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika8.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika9.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika10.jpg"},
+ {id:15, title:"Srebrni prsten", category:"ogrlica", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika6.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika7.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika8.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika9.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika10.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika11.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika12.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika13.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika13.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika14.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika15.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika16.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika16.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika17.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika18.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika18.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika19.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika20.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika21.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika22.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika23.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika24.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika25.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika26.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika27.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika28.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika21.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika22.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika23.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika24.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika25.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika26.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika27.jpg"},
+ {id:15, title:"Srebrni prsten", category:"privezak", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika28.jpg"},
  //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika29.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika30.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika30.jpg"},
 
-     {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika31.jpg"},
-      {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika32.jpg"},
-       {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika33.jpg"},
-        {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika34.jpg"},
-         {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika35.jpg"},
+     {id:15, title:"Srebrni prsten", category:"ogrlica", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika31.jpg"},
+      {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika32.jpg"},
+       {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika33.jpg"},
+        {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika34.jpg"},
+         {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika35.jpg"},
           //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika36.jpg"},
-           {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika37.jpg"},
-            {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika38.jpg"},
-             {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika39.jpg"},
-  {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika40.jpg"},
-   {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika41.jpg"},
-    {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika42.jpg"},
-     {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika43.jpg"},
- {id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika44.jpg"},
+           {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika37.jpg"},
+            {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika38.jpg"},
+             {id:15, title:"Srebrni prsten", category:"privezak", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika39.jpg"},
+  {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika40.jpg"},
+   {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika41.jpg"},
+    {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika42.jpg"},
+     {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika43.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika44.jpg"},
      
 ];
 
   const productList = document.getElementById('productList');
-  const priceRange = document.getElementById('priceRange');
-  const priceValue = document.getElementById('priceValue');
+  // const priceRange = document.getElementById('priceRange');
+  // const priceValue = document.getElementById('priceValue');
 
   function displayProducts() {
-    const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked')).map(f=>f.dataset.category);
-    const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked')).map(f=>f.dataset.material);
-    const maxPrice = parseInt(priceRange.value);
+  const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked'))
+    .map(f => f.dataset.category);
 
-    productList.innerHTML = '';
+  const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked'))
+    .map(f => f.dataset.material);
 
-    const filtered = products.filter(p=>{
-      return (categoryFilters.length === 0 || categoryFilters.includes(p.category)) &&
-             (materialFilters.length === 0 || materialFilters.includes(p.material)) &&
-             p.price <= maxPrice;
-    });
+  productList.innerHTML = '';
 
-    filtered.forEach(p=>{
-      const div = document.createElement('div');
-      div.className = 'product-item';
-      div.innerHTML = `
-        <img src="${p.img}" alt="${p.title}">
-        <h4>${p.title}</h4>
-       
-        <p class="price">Cena na upit</p>
-       <a href="#footer">Kontaktirajte nas</a>
-      `;
-      productList.appendChild(div);
-    });
-  }
+  const filtered = products.filter(p => {
+    return (categoryFilters.length === 0 || categoryFilters.includes(p.category)) &&
+           (materialFilters.length === 0 || materialFilters.includes(p.material));
+  });
+
+  filtered.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product-item';
+    div.innerHTML = `
+      <img src="${p.img}" alt="${p.title}">
+      <h4>${p.title}</h4>
+      <p class="price">Cena na upit</p>
+      <a href="#footer">Kontaktirajte nas</a>
+    `;
+    productList.appendChild(div);
+  });
+}
+
 
   document.querySelectorAll('.filter').forEach(f=>f.addEventListener('change', displayProducts));
-  priceRange.addEventListener('input', ()=>{
-    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' RSD';
-    displayProducts();
-  });
+  //  priceRange.addEventListener('input', ()=>{
+  //   priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' RSD';
+  //   displayProducts();
+  // });
 
   const modal = document.getElementById('productModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -1169,3 +1176,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
