@@ -144,13 +144,16 @@ body{
       transform: translateY(-3px);
       box-shadow: 0 8px 15px rgba(0,0,0,0.08);
     }
+.product-item img {
+  width: 100%;
+  height: 220px;          /* izaberi visinu koja ti odgovara (npr 200–260px) */
+  object-fit: cover;      /* sve slike iste veličine, crop po potrebi */
+  object-position: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
 
-    .product-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
 
     .product-item h4 { margin: 10px 0 5px 0; font-size: 1.1em; color: #333; }
     .product-item p { margin: 5px 0; font-size: 0.95em; color: #555; }
@@ -693,7 +696,13 @@ footer{
   font-weight: 300;
   font-style: normal;
 }
-
+.navbar a {
+    text-decoration: none;
+    color: #b58900;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
 
   </style>
 </head>
@@ -733,22 +742,19 @@ footer{
     <h3>Filteri</h3>
     <div class="filter-category">
       <h4>Kategorija</h4>
-      <label><input type="checkbox" class="filter" data-category="prstenje"> Prstenje</label>
+      <label><input type="checkbox" class="filter" data-category="prsten"> Prstenje</label>
       <label><input type="checkbox" class="filter" data-category="ogrlice"> Ogrlice</label>
-      <label><input type="checkbox" class="filter" data-category="narukvice"> Narukvice</label>
-      <label><input type="checkbox" class="filter" data-category="satovi"> Satovi</label>
-      <label><input type="checkbox" class="filter" data-category="zlatnici"> Zlatnici</label>
+      <label><input type="checkbox" class="filter" data-category="narukvica"> Narukvice</label>
+     <label><input type="checkbox" class="filter" data-category="privezak"> Privesci</label>
+      <label><input type="checkbox" class="filter" data-category="minđuše"> Minđuše</label>
     </div>
-    <div class="filter-price">
-      <h4>Cena do</h4>
-      <input type="range" id="priceRange" min="0" max="200000" step="1000" value="100000">
-      <span id="priceValue">100,000 RSD</span>
-    </div>
+    
     <div class="filter-material">
       <h4>Materijal</h4>
-      <label><input type="checkbox" class="filter" data-material="zlato"> Zlato</label>
+      <label><input type="checkbox" class="filter" data-material="žuto zlato"> Žuto zlato</label>
+      <label><input type="checkbox" class="filter" data-material="belo zlato"> Belo zlato</label>
       <label><input type="checkbox" class="filter" data-material="srebro"> Srebro</label>
-      <label><input type="checkbox" class="filter" data-material="platina"> Platina</label>
+     
     </div>
   </aside>
 
@@ -768,7 +774,7 @@ footer{
 </div>
 
 <!-- FOOTER -->
-<footer style="background-color: #f9f9f9; color: #444; padding: 50px 20px; margin-top: 60px; border-top: 1px solid #eee; ">
+<footer style="background-color: #f9f9f9; color: #444; padding: 50px 20px; margin-top: 60px; border-top: 1px solid #eee; " id="footer">
   <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
 
     <!-- Logo i opis -->
@@ -815,69 +821,209 @@ footer{
 
 <script>
   const products = [
-    {id:1, title:"Prsten od zlata", category:"prstenje", material:"zlato", price:50000, desc:"Elegantni prsten sa dijamantom", img:"prsten od zlata.jpg"},
-    {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:25000, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrna ogrlica.webp"},
-    {id:3, title:"Narukvica od platine", category:"narukvice", material:"platina", price:75000, desc:"Moderan dizajn narukvice", img:"narukvica od platine.jpg"},
-    {id:4, title:"Prsten sa smaragdom", category:"prstenje", material:"srebro", price:60000, desc:"Prsten sa zelenim smaragdom", img:"prsten sa smaragdom.jpg"},
-    {id:5, title:"Ogrlica sa perlama", category:"ogrlice", material:"srebro", price:30000, desc:"Ogrlica sa belim perlama", img:"ogrlica sa belim perlama.jpg"},
-    {id:6, title:"Srebrna narukvica", category:"narukvice", material:"srebro", price:20000, desc:"Jednostavna srebrna narukvica", img:"srebrna narukvica.jpg"},
-    {id:7, title:"Zlatni prsten sa rubinom", category:"prstenje", material:"srebro", price:85000, desc:"Prsten sa crvenim rubinom", img:"prsten sa crvenim rubinom.jpg"},
-    {id:8, title:"Platinska ogrlica", category:"ogrlice", material:"platina", price:90000, desc:"Elegantna platinska ogrlica", img:"platinska ogrlica.avif"},
+    {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika48.png"},
+              {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika49.png"},
+        {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika50.png"},
+         {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika51.png"},
+          
+    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
+       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
+      
+    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika13.png"},
+          
+    {id:14, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:30000, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatannakit/slika5.png"},
+   
+    {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:50000, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/slika1.png"},
+ {id:9, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:120000, desc:"Luksuzni zlatni sat sa kožnim kaišem",img:"zlatannakit/slika3.png"},
+     {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
+       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
+       
+ 
+     {id:12, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:70000, desc:"Retro dizajn zlatne ogrlice", img:"zlatannakit/slika4.png"},
+        {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika8.png"},
 
-    {id:9, title:"Zlatni sat Classic", category:"satovi", material:"zlato", price:120000, desc:"Luksuzni zlatni sat sa kožnim kaišem", img:"zlatni sat classic.webp"},
-    {id:10, title:"Srebrni prsten sa topazom", category:"prstenje", material:"srebro", price:45000, desc:"Prsten sa plavim topazom", img:"prsten sa plavim topazom.jpeg"},
-    {id:11, title:"Platinska narukvica sa dijamantima", category:"narukvice", material:"platina", price:95000, desc:"Narukvica sa sitnim dijamantima", img:"platinska narukvica dijamanti.avif"},
-    {id:12, title:"Zlatna ogrlica Vintage", category:"ogrlice", material:"zlato", price:70000, desc:"Retro dizajn zlatne ogrlice", img:"zlatna ogrlica vintage.jpg"},
-    {id:13, title:"Srebrni sat Modern", category:"satovi", material:"srebro", price:55000, desc:"Moderni srebrni sat sa metalnim kaišem", img:"srebri sat modern.jpg"},
-    {id:14, title:"Zlatni zlatnik sa motivom", category:"zlatnici", material:"zlato", price:30000, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatni zlatnik.jpg"},
-    {id:15, title:"Platinski prsten sa safirom", category:"prstenje", material:"platina", price:105000, desc:"Prsten sa plavim safirom", img:"platinski prsten safir.jpg"},
-    {id:16, title:"Srebrna narukvica sa cirkonima", category:"narukvice", material:"srebro", price:35000, desc:"Narukvica sa cirkon ukrasima", img:"srebrna narukvica cirkoni.png"},
-    {id:17, title:"Zlatni sat Elegant", category:"satovi", material:"zlato", price:130000, desc:"Elegantni zlatni sat za sve prilike", img:"zlatni sat elegant.jpg"},
-    {id:18, title:"Ogrlica sa platinom i dijamantima", category:"ogrlice", material:"platina", price:110000, desc:"Prelepa ogrlica sa dijamantima", img:"platinska ogrlica dijamanti.jpg"},
-    {id:19, title:"Srebrni zlatnik sa grbom", category:"zlatnici", material:"srebro", price:25000, desc:"Kolekcionarski srebrni zlatnik", img:"srebrni zlatnik grb.webp"},
-    {id:20, title:"Zlatna narukvica Classic", category:"narukvice", material:"zlato", price:65000, desc:"Klasična zlatna narukvica", img:"zlatna narukvica classic.webp"},
-    {id:21, title:"Platinski sat Luxury", category:"satovi", material:"platina", price:150000, desc:"Luksuzni platinski sat", img:"platinski sat luxury.webp"},
-    {id:22, title:"Prsten od srebra sa granatom", category:"prstenje", material:"srebro", price:40000, desc:"Srebrni prsten sa crvenim granatom", img:"prsten srebro granat.avif"},
-    {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatna ogrlica sa smaragdom.jpg"}
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika12.png"},        
+  {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika9.png"},
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika24.png"},
+          {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika25.png"},
+          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika26.png"},
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika27.png"},
+       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika28.png"},
+       
+       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika55.png"},
+         {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika56.png"},
+          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika57.png"},
+
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika59.png"},
+       {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika60.png"},
+         
+      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika34.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika35.png"},
+         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika36.png"},
+          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika37.png"},
+           {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika38.png"},
+       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika39.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika40.png"},
+         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika41.png"},
+          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika42.png"},
+          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika43.png"},
+      // {id:23, title:"Minđuše od belog zlata ukrašene cirkonima", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika44.png"},
+       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika45.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika46.png"},
+                {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika67.png"},
+
+         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika29.png"},
+         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika30.png"},
+          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika31.png"},
+          // {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika32.png"},
+      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika33.png"},
+        //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika47.png"},
+        //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika52.png"},
+           {id:23, title:"Moj prvi gram za dečake", category:"prvi gram", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika53.png"},
+       {id:23, title:"Moj prvi gram za devojčice", category:"prvi gram", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika54.png"},
+       // {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika61.png"},
+         {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika62.png"},
+          {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika63.png"},
+          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika64.png"},
+          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika65.png"},
+             {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika10.png"},
+                 {id:17, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:130000, desc:"Elegantni zlatni sat za sve prilike", img:"zlatannakit/slika6.png"},
+
+            {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika66.png"},
+             {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:2.04, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika66.png"},
+       {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:1.17, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika67.png"},
+           {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:1.81, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika68.png"},
+               {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:2.57, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika69.png"},
+                              {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:25000, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika93.png"},
+
+                   {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:1.7, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika70.png"},
+                       {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:2.08, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika71.png"},
+                           {id:2, title:"Srebrna narukvica", category:"narukvica", material:"srebro", price:1.62, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika72.png"},
+                               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.8, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika73.png"},
+                                   {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:0.54, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika74.png"},
+                                       {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.97, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika75.png"},
+                                           {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.67, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika76.png"},
+                                               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.86, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika77.png"},
+    {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.32, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika78.png"},
+      //  {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:25000, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika79.png"},
+           {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.67, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika80.png"},
+               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:0.92, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika81.png"},
+                   {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.56, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika82.png"},
+                               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:0.91, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika90.png"},
+
+                       {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.5, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika83.png"},
+                           {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.91, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika84.png"},
+                               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.28, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika85.png"},
+                                   {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.18, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika86.png"},
+                                       {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.22, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika87.png"},
+                                           {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:0.7, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika88.png"},
+                                               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:0.88, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika89.png"},
+            {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:0.62, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika90.png"},
+                                               {id:2, title:"Srebrne minđuše", category:"minđuše", material:"srebro", price:1.59, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika91.png"},
+                                                  {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:1, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika92.png"},
+                   {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:0.9, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika94.png"},
+                                              {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:1.08, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika107.png"},
+
+                       {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:0.88, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika95.png"},
+                           {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:1.48, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika96.png"},
+                               {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:0.73, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika97.png"},
+                                   {id:2, title:"Srebrni privezak", category:"privezak", material:"srebro", price:0.44, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika98.png"},
+                                       {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:2.04, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika99.png"},
+                                           {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:2.64, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika100.png"},
+                                               {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:2.1, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika101.png"},
+                                               {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:1.78, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika102.png"},
+                           {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:2.05, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika103.png"},
+               {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:1.66, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika104.png"},
+                   {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:2.91, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika105.png"},
+                       {id:2, title:"Srebrna ogrlica", category:"ogrlice", material:"srebro", price:2.97, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika106.png"},
+                               {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:2.2, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika108.png"},
+                                   {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:1.69, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika109.png"},
+                                       {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:1.7, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika110.png"},
+                                           {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:1.71, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika114.png"},
+                                               {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:1.48, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika115.png"},       
+                                               {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:2.35, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika116.png"},
+                                               {id:2, title:"Srebrni prsten", category:"prsten", material:"srebro", price:2.01, desc:"Lepa srebrna ogrlica sa ukrasima", img:"srebrninakit/slika117.png"},
+                                               {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika1.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika2.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika3.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika4.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika5.jpg"},
+ {id:15, title:"Srebrni prsten", category:"ogrlice", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika6.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika7.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika8.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika9.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika10.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika11.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika12.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika13.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika14.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika15.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika16.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika17.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika18.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika19.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika20.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika21.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika22.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika23.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika24.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika25.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika26.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika27.jpg"},
+ {id:15, title:"Srebrni prsten", category:"privezak", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika28.jpg"},
+ //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika29.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika30.jpg"},
+
+     {id:15, title:"Srebrni prsten", category:"ogrlice", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika31.jpg"},
+      {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika32.jpg"},
+       {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika33.jpg"},
+        {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika34.jpg"},
+         {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika35.jpg"},
+          //{id:15, title:"Srebrni prsten", category:"prstenje", material:"srebro", price:105000, desc:"Ručno rađen prsten od srebra", img:"slika36.jpg"},
+           {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika37.jpg"},
+            {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika38.jpg"},
+             {id:15, title:"Srebrni prsten", category:"privezak", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika39.jpg"},
+  {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika40.jpg"},
+   {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika41.jpg"},
+    {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika42.jpg"},
+     {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika43.jpg"},
+ {id:15, title:"Srebrni prsten", category:"prsten", material:"srebro", price:10500, desc:"Ručno rađen prsten od srebra", img:"rucnoradjennakit/slika44.jpg"}
      
 ];
 
   const productList = document.getElementById('productList');
-  const priceRange = document.getElementById('priceRange');
-  const priceValue = document.getElementById('priceValue');
 
-  function displayProducts() {
-    const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked')).map(f=>f.dataset.category);
-    const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked')).map(f=>f.dataset.material);
-    const maxPrice = parseInt(priceRange.value);
 
-    productList.innerHTML = '';
+function displayProducts() {
+  const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked'))
+    .map(f => f.dataset.category);
 
-    const filtered = products.filter(p=>{
-      return (categoryFilters.length === 0 || categoryFilters.includes(p.category)) &&
-             (materialFilters.length === 0 || materialFilters.includes(p.material)) &&
-             p.price <= maxPrice;
-    });
+  const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked'))
+    .map(f => f.dataset.material);
 
-    filtered.forEach(p=>{
-      const div = document.createElement('div');
-      div.className = 'product-item';
-      div.innerHTML = `
-        <img src="${p.img}" alt="${p.title}">
-        <h4>${p.title}</h4>
-        <p>${p.desc}</p>
-        <p class="price">${p.price.toLocaleString('sr-RS')} RSD</p>
-        <a href="proizvod.html?id=${p.id}">Detalji</a>
-      `;
-      productList.appendChild(div);
-    });
-  }
+  productList.innerHTML = '';
+
+  const filtered = products.filter(p => {
+    return (categoryFilters.length === 0 || categoryFilters.includes(p.category)) &&
+           (materialFilters.length === 0 || materialFilters.includes(p.material));
+  });
+
+  filtered.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product-item';
+    div.innerHTML = `
+      <img src="${p.img}" alt="${p.title}">
+      <h4>${p.title}</h4>
+      <p class="price">Cena na upit</p>
+      <a href="#footer">Kontaktirajte nas</a>
+    `;
+    productList.appendChild(div);
+  });
+}
+
 
   document.querySelectorAll('.filter').forEach(f=>f.addEventListener('change', displayProducts));
-  priceRange.addEventListener('input', ()=>{
-    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' RSD';
-    displayProducts();
-  });
+
 
   const modal = document.getElementById('productModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -1155,3 +1301,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
+
