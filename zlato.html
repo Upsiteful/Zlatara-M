@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <title>Proizvodi - Zlatara</title>
   <style>
     body {
@@ -687,7 +688,13 @@ html {
   outline: none;
   box-shadow: none;
 }
-
+.navbar a {
+    text-decoration: none;
+    color: #b58900;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
   </style>
 </head>
 <body>
@@ -733,9 +740,9 @@ html {
       <label><input type="checkbox" class="filter" data-category="minđuše"> Minđuše</label>
     </div>
     <div class="filter-price">
-      <h4>Cena do</h4>
-      <input type="range" id="priceRange" min="0" max="200000" step="1000" value="100000">
-      <span id="priceValue">100,000 RSD</span>
+      <h4>Gramaža do</h4>
+      <input type="range" id="priceRange" min="0" max="3" step="0.1" value="1.5">
+      <span id="priceValue">1,5 g</span>
     </div>
     <!-- <div class="filter-material">
       <h4>Materijal</h4>
@@ -807,19 +814,19 @@ html {
 
 <script>
   const products = [
-     {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika48.png"},
-              {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika49.png"},
-        {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika50.png"},
-         {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika51.png"},
+     {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika48.png"},
+              {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika49.png"},
+        {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika50.png"},
+         {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika51.png"},
           
-    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
-       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
+    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
+       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
       
-    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika13.png"},
+    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika13.png"},
           
-    {id:14, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:30000, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatannakit/slika5.png"},
+    {id:14, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:1.5, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatannakit/slika5.png"},
    
-    {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:50000, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/slika1.png"},
+    {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/slika1.png"},
    
    
    
@@ -827,17 +834,17 @@ html {
     // {id:7, title:"Prsten od belog zlata sa cvetnim motivima", category:"prstenje", material:"zlato", price:85000, desc:"Prsten sa crvenim rubinom",img:"zlatannakit/slika2.png"},
    
 
-    {id:9, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:120000, desc:"Luksuzni zlatni sat sa kožnim kaišem",img:"zlatannakit/slika3.png"},
-     {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
-       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
+    {id:9, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Luksuzni zlatni sat sa kožnim kaišem",img:"zlatannakit/slika3.png"},
+     {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
+       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
        
  
-     {id:12, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:70000, desc:"Retro dizajn zlatne ogrlice", img:"zlatannakit/slika4.png"},
+     {id:12, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:1.5, desc:"Retro dizajn zlatne ogrlice", img:"zlatannakit/slika4.png"},
   
         // {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika11.png"},
-                   {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika8.png"},
+                   {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika8.png"},
 
-         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika12.png"},
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika12.png"},
           
    
    
@@ -846,61 +853,54 @@ html {
     
    
    
-      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika9.png"},
-      // {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika14.png"},
-        // {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika17.png"},
-        //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika18.png"},
-        //   {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika19.png"},
-        //   {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika20.png"},
-      // {id:23, title:"Minđuše od belog zlata ukrašene cirkonima", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika21.png"},
-      // //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika22.png"},
-      //   {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika23.png"},
-         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika24.png"},
-          {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika25.png"},
-          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika26.png"},
-      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika27.png"},
-       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika28.png"},
-       
-       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika55.png"},
-         {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika56.png"},
-          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika57.png"},
-          // {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika58.png"},
-      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika59.png"},
-       {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika60.png"},
-         
-      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika34.png"},
-        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika35.png"},
-         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika36.png"},
-          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika37.png"},
-           {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika38.png"},
-       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika39.png"},
-        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika40.png"},
-         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika41.png"},
-          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika42.png"},
-          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika43.png"},
-      // {id:23, title:"Minđuše od belog zlata ukrašene cirkonima", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika44.png"},
-       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika45.png"},
-        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika46.png"},
-                {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika67.png"},
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika9.png"},
 
-         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika29.png"},
-         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika30.png"},
-          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika31.png"},
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika24.png"},
+          {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika25.png"},
+          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika26.png"},
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika27.png"},
+       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika28.png"},
+       
+       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika55.png"},
+         {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika56.png"},
+          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika57.png"},
+          // {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika58.png"},
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika59.png"},
+       {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika60.png"},
+         
+      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika34.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika35.png"},
+         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika36.png"},
+          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika37.png"},
+           {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika38.png"},
+       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika39.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika40.png"},
+         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika41.png"},
+          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika42.png"},
+          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika43.png"},
+      // {id:23, title:"Minđuše od belog zlata ukrašene cirkonima", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika44.png"},
+       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika45.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika46.png"},
+                {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika67.png"},
+
+         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika29.png"},
+         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika30.png"},
+          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika31.png"},
           // {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika32.png"},
-      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika33.png"},
+      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika33.png"},
         //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika47.png"},
         //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika52.png"},
-           {id:23, title:"Moj prvi gram za dečake", category:"prvi gram", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika53.png"},
-       {id:23, title:"Moj prvi gram za devojčice", category:"prvi gram", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika54.png"},
+           {id:23, title:"Moj prvi gram za dečake", category:"prvi gram", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika53.png"},
+       {id:23, title:"Moj prvi gram za devojčice", category:"prvi gram", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika54.png"},
        // {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika61.png"},
-         {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika62.png"},
-          {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika63.png"},
-          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika64.png"},
-          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika65.png"},
-             {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika10.png"},
-                 {id:17, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:130000, desc:"Elegantni zlatni sat za sve prilike", img:"zlatannakit/slika6.png"},
+         {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika62.png"},
+          {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika63.png"},
+          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika64.png"},
+          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika65.png"},
+             {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika10.png"},
+                 {id:17, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:1.5, desc:"Elegantni zlatni sat za sve prilike", img:"zlatannakit/slika6.png"},
 
-            {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika66.png"}
+            {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika66.png"}
 ];
 
   const productList = document.getElementById('productList');
@@ -910,7 +910,7 @@ html {
   function displayProducts() {
     const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked')).map(f=>f.dataset.category);
     const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked')).map(f=>f.dataset.material);
-    const maxPrice = parseInt(priceRange.value);
+    const maxPrice = parseFloat(priceRange.value);
 
     productList.innerHTML = '';
 
@@ -927,7 +927,7 @@ html {
         <img src="${p.img}" alt="${p.title}">
         <h4>${p.title}</h4>
        
-        <p class="price">${p.price.toLocaleString('sr-RS')} RSD</p>
+        <p class="price">${p.price.toLocaleString('sr-RS')} g</p>
          <a href="#footer">Kontaktirajte nas</a>
       `;
       productList.appendChild(div);
@@ -936,7 +936,7 @@ html {
 
   document.querySelectorAll('.filter').forEach(f=>f.addEventListener('change', displayProducts));
   priceRange.addEventListener('input', ()=>{
-    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' RSD';
+    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' g';
     displayProducts();
   });
 
