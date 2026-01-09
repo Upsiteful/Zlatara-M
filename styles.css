@@ -1046,8 +1046,8 @@ footer {
 }
 
 /* Backgrounds */
-.srebro { background: url("hero-desktop.png") center/cover no-repeat; }
-.zlato { background: url("zlato.png") center/cover no-repeat; }
+.srebro { background: url("srebrninakit/slika82.png") center/cover no-repeat; }
+.zlato { background: url("zlatannakit/slika5.png") center/cover no-repeat; }
 .rucni { background: url("rucnoradjennakit/slika28.jpg") center/cover no-repeat; }
 
 /* Overlay */
@@ -1127,6 +1127,15 @@ footer{
   font-weight: 300;
   font-style: normal;
 }
+
+
+
+
+
+
+
+
+
 
 
 
