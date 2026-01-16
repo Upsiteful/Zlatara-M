@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Zlatara</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+  <div class="logo">
+    <a href="index.html">    <img src="ChatGPT_Image_Nov_13__2025__08_23_57_AM-removebg-preview.png" alt="Zlatara Logo"></a>
+
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">POČETNA</a></li>
+      <li><a href="onama.html">O NAMA</a></li>
+      <li><a href="proizvodi.html">KOLEKCIJA</a></li>
+    </ul>
+  </nav>
+
+  <!-- HAMBURGER (sklonićemo ga CSS-om na desktopu) -->
+  <div class="hamburger" aria-label="meni" title="meni">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="language-switcher">
+    <img src="zastava srbija.svg" onclick="translateLanguage('sr')" alt="Srpski">
+    <img src="zastava velike britanije.svg" onclick="translateLanguage('en')" alt="English">
+    <img src="zastava nemacka.webp" onclick="translateLanguage('de')" alt="Deutsch">
+    <img src="ruska zastava.svg" onclick="translateLanguage('ru')" alt="Русский">
+  </div>
+
+</header>
+
+<section class="hero">
+  <picture class="hero-bg">
+  <!-- mobilna verzija -->
+  <source srcset="verenicko.jpg" media="(max-width: 768px)">
+  <!-- desktop verzija -->
+  <source srcset="verenicko.jpg" media="(min-width: 769px)">
+  <!-- fallback (ako browser ne podržava source) -->
+  <img src="hero-desktop.png" alt="Vereničko prstenje" class="hero-bg">
+</picture>
+
+  <div class="hero-content">
+    <h1 style="font-family:  'Playfair Display',serif; font-weight: 100;">Vereničko prstenje</h1>
+    <a href="proizvodi.html" class="cta-btn">Pogledaj ponudu</a>
+  </div>
+</section>
+
+<!-- <section class="categories">
+  <h2>SVE KATEGORIJE</h2>
+  <hr class="divider" />
+  <p>Kompletan naš asortiman je izrađen od zlata visokog kvaliteta sa kombinacijom brilijanata, cirkona i dragog kamenja.</p>
+  <p>Pogledajte sve naše proizvode:</p>
+
+  <div class="category-grid">
+    
+    <div class="category-item">
+      <img src="burme.jpg" alt="Burme" />
+      <h3>Burme</h3>
+      <a href="proizvodi.html">Pogledajte sve &raquo;</a>
+    </div>
+    <div class="category-item">
+      <img src="verenicko prstenje.webp" alt="Vereničko prstenje" />
+      <h3>Vereničko prstenje</h3>
+      <a href="proizvodi.html">Pogledajte sve &raquo;</a>
+    </div>
+    <div class="category-item">
+      <img src="zlatni nakit.webp" alt="Zlatni nakit" />
+      <h3>Zlatni nakit</h3>
+      <a href="proizvodi.html">Pogledajte sve &raquo;</a>
+    </div>
+
+
+    <div class="category-item">
+      <img src="Srebrni nakit.jpg" alt="Srebrni nakit" />
+      <h3>Srebrni nakit</h3>
+      <a href="proizvodi.html">Pogledajte sve &raquo;</a>
+    </div>
+    <div class="category-item">
+      <img src="ručni sat.jpg" alt="Ručni satovi" />
+      <h3>Ručni satovi</h3>
+      <a href="proizvodi.html">Pogledajte sve &raquo;</a>
+    </div>
+    <div class="category-item">
+      <img src="zlatnici.jpg" alt="Zlatnici" />
+      <h3>Zlatnici</h3>
+      <a href="proizvodi.html">Pogledajte sve &raquo;</a>
+    </div>
+  </div>
+</section> -->
+<section class="category-split">
+ <a href="zlato.html" class="category-block zlato">
+    <div class="overlay"></div>
+    <h2>Zlato</h2>
+  </a> 
+  <a href="srebro.html" class="category-block srebro">
+    <div class="overlay"></div>
+    <h2>Srebro</h2>
+  </a>
+
+  
+
+  <a href="rucnoradjen.html" class="category-block rucni">
+    <div class="overlay"></div>
+    <h2>Unikatan ručno rađen nakit</h2>
+  </a>
+</section>
+
+<section class="new-products">
+  <h2>NOVI PROIZVODI</h2>
+  <div class="divider"></div>
+  <p><em>Pogledajte najnovije proizvode dostupne u našim radnjama</em></p>
+
+  <div class="product-slider">
+    <div class="product-track">
+      <!-- Prva strana proizvoda -->
+      <div class="product-card">
+        <img src="zlatannakit/slika1.png" alt="Prsten">
+        <h3>PRSTEN</h3>
+        <p class="price">30.550,00 rsd</p>
+      </div>
+      <div class="product-card">
+        <img src="zlatannakit/slika29.png" alt="Prsten">
+        <h3>SREBRNA OGRLICA</h3>
+        <p class="price">24.050,00 rsd</p>
+      </div>
+      <div class="product-card">
+        <img src="zlatannakit/slika43.png" alt="Prsten">
+        <h3>SREBRNO PRSTENJE</h3>
+        <p class="price">21.450,00 rsd</p>
+      </div>
+      <div class="product-card">
+        <img src="zlatannakit/slika35.png" alt="Prsten">
+        <h3>PRSTEN</h3>
+        <p class="price">26.000,00 rsd</p>
+      </div>
+
+      <!-- Druga strana proizvoda (možeš dodati više ako želiš) -->
+      <div class="product-card">
+        <img src="zlatannakit/slika45.png" alt="Prsten">
+        <h3>PRSTEN</h3>
+        <p class="price">28.300,00 rsd</p>
+      </div>
+      <div class="product-card">
+        <img src="zlatannakit/slika48.png" alt="Prsten">
+        <h3>PRSTEN</h3>
+        <p class="price">25.000,00 rsd</p>
+      </div>
+      <div class="product-card">
+        <img src="srebrninakit/slika80.png" alt="Prsten">
+        <h3>PRSTEN</h3>
+        <p class="price">22.750,00 rsd</p>
+      </div>
+      <div class="product-card">
+        <img src="srebrninakit/slika85.png" alt="Prsten">
+        <h3>PRSTEN</h3>
+        <p class="price">29.990,00 rsd</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+  </div>
+</section>
+
+<section class="about-stats">
+  <div class="about-text">
+    <h5>NAŠA PRIČA</h5>
+    <h2>TRADICIJA KOJA TRAJE</h2>
+    <p>
+      Još od svojih skromnih početaka, naša zlatara je bila mesto gde se elegancija i zanatska preciznost stapaju u jedno.  
+      Kroz godine, generacije su birale naše komade za najvažnije trenutke — veridbe, venčanja, poklone koji ostaju zauvek.  
+      Danas, sa savremenim pristupom i istom strašću, nastavljamo da stvaramo nakit koji ima dušu.
+    </p>
+    <a href="#" class="btn-about">Saznaj više</a>
+  </div>
+
+  <div class="about-stats-numbers">
+    <div class="stat-box">
+      <i class="fas fa-gem stat-icon"></i>
+      <div class="stat-value" data-target="500">0</div>
+      <p>UNIKATNIH KOMADA</p>
+    </div>
+    <div class="stat-box">
+     <i class="fas fa-location-dot"></i>
+      <div class="stat-value" data-target="1">0</div>
+      <p>RADNJE U SRBIJI</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-user"></i>
+      <div class="stat-value" data-target="1000">0</div>
+      <p>VERNIH KLIJENATA</p>
+    </div>
+    <div class="stat-box">
+     <i class="	fas fa-trophy"></i>
+      <div class="stat-value" data-target="20">0</div>
+      <p>GODINA POVERENJA</p>
+    </div>
+  </div>
+</section>
+
+ 
+<!-- FOOTER -->
+<footer style="background-color: #f9f9f9; color: #444; padding: 50px 20px; margin-top: 60px; border-top: 1px solid #eee; ">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+
+    <!-- Logo i opis -->
+    <div style="flex: 1; min-width: 260px;">
+      <h2 style="color: #d4af37; margin-bottom: 12px; font-size: 22px;">Zlatara M</h2>
+      <p style="font-size: 15px; line-height: 1.8; color:#555;">
+        Sa tradicijom dugom skoro dve decenije, Zlatara M donosi vrhunski kvalitet i bezvremensku
+        eleganciju. Naš nakit je pažljivo izrađen da upotpunjava svaki trenutak – od posebnih prilika do svakodnevnog sjaja.
+      </p>
+    </div>
+
+    <!-- Navigacija -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d4af37; margin-bottom: 12px; font-size: 18px;">Navigacija</h3>
+      <ul style="list-style: none; padding: 0; font-size: 15px; line-height: 2;">
+        <li><a href="index.html" style="color: #444; text-decoration: none;">Početna</a></li>
+        <!-- <li><a href="usluge.html" style="color: #444; text-decoration: none;">Usluge</a></li>
+        <li><a href="edukacija.html" style="color: #444; text-decoration: none;">Edukacija</a></li> -->
+        <li><a href="onama.html" style="color: #444; text-decoration: none;">O nama</a></li>
+        <li><a href="proizvodi.html" style="color: #444; text-decoration: none;">Kolekcija</a></li>
+        
+        
+      </ul>
+    </div>
+
+    <!-- Kontakt i društvene mreže -->
+    <div style="flex: 1; min-width: 240px;">
+      <h3 style="color: #d4af37; margin-bottom: 12px; font-size: 18px;">Kontakt</h3>
+      <p style="font-size: 15px; margin: 6px 0;">📍 Hadži Ruvimova 33, Novi Sad</p>
+      <p style="font-size: 15px; margin: 6px 0;">📞 +381 63 630 095</p>
+      <p style="font-size: 15px; margin: 6px 0;">✉️ info@zlatara.rs</p>
+      <div style="margin-top: 12px; font-size: 20px;">
+        <a href="https://www.facebook.com/zlatara.mj/" target="_blank" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/zlatara_m_j?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #777;">
+    © 2025 Zlatara M. Sva prava zadržana.
+  </div>
+</footer>
+
+<!-- Skripte iz originalnog fajla (samo sam dodao mali JS za hamburger/close) -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const stats = document.querySelectorAll(".stat-value");
+    let observerStarted = false;
+
+    const observer = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !observerStarted) {
+            observerStarted = true;
+            stats.forEach((stat) => {
+              const target = +stat.getAttribute("data-target");
+              let current = 0;
+              const duration = 2000; // ukupno vreme animacije u ms
+              const stepTime = 20;   // interval animacije
+
+              const step = Math.ceil((target * stepTime) / duration);
+
+              const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                  stat.textContent = target.toLocaleString("sr-RS");
+                  clearInterval(interval);
+                } else {
+                  stat.textContent = current.toLocaleString("sr-RS");
+                }
+              }, stepTime);
+            });
+
+            observer.disconnect(); // zaustavi posmatranje nakon prve animacije
+          }
+        });
+      },
+      { threshold: 0.5 } // animacija kreće kada je 50% sekcije vidljivo
+    );
+
+    const section = document.querySelector(".about-stats");
+    if (section) {
+      observer.observe(section);
+    }
+  });
+</script>
+
+<script>
+(function(){
+  const slider = document.querySelector('.product-slider');
+  const track = document.querySelector('.product-track');
+  const dotsContainer = document.querySelector('.slider-dots');
+  if (!slider || !track || !dotsContainer) return;
+
+  const cards = Array.from(track.querySelectorAll('.product-card'));
+  let cardsPerSlide = (window.innerWidth <= 768) ? 1 : 4;
+  let slides = 1;
+  let currentSlide = 0;
+  let autoSlideInterval;
+
+  function computeSlides() {
+    // Prebaci na box-sizing border-box ako nije (sigurnost)
+    const sliderWidth = slider.clientWidth;
+    const trackWidth = track.scrollWidth;
+
+    // Koliko "full pages" stane u track (realan broj stranica)
+    slides = Math.max(1, Math.ceil(trackWidth / sliderWidth));
+
+    // Takođe obezbedi fallback zasnovan na broju kartica i cardsPerSlide
+    const fallbackSlides = Math.max(1, Math.ceil(cards.length / cardsPerSlide));
+    slides = Math.max(1, Math.min(slides, fallbackSlides));
+
+    // Ako broj kartica tačno deli cardsPerSlide, slide count je fallback
+    // (ovo izbegava slučajeve kad scrollWidth okrugljuje na veću vrednost)
+    return { sliderWidth, trackWidth };
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < slides; i++) {
+      const span = document.createElement('span');
+      span.className = 'dot' + (i === 0 ? ' active' : '');
+      span.dataset.slide = i;
+      dotsContainer.appendChild(span);
+      span.addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        goToSlide(i);
+        autoSlideInterval = setInterval(autoSlide, 5000);
+      });
+    }
+  }
+
+  function updateLayout() {
+    cardsPerSlide = (window.innerWidth <= 768) ? 2 : 4;
+    const dims = computeSlides();
+    buildDots();
+    // Ako trenutno slide index prelazi novi broj slide-ova, postavi na poslednji validan
+    if (currentSlide >= slides) currentSlide = slides - 1;
+    goToSlide(currentSlide);
+  }
+
+  function goToSlide(index) {
+    const { sliderWidth, trackWidth } = computeSlides();
+    const maxTranslate = Math.max(0, trackWidth - sliderWidth);
+    const desiredTranslate = sliderWidth * index;
+    const translate = Math.min(desiredTranslate, maxTranslate);
+
+    track.style.transform = `translateX(-${translate}px)`;
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach(d => d.classList.remove('active'));
+    if (dots[index]) dots[index].classList.add('active');
+
+    currentSlide = index;
+  }
+
+  function autoSlide() {
+    currentSlide = (currentSlide + 1) % slides;
+    goToSlide(currentSlide);
+  }
+
+  window.addEventListener('load', () => {
+    updateLayout();
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(autoSlide, 5000);
+  });
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    // debounce resize radi fluidnosti
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updateLayout();
+    }, 120);
+  });
+
+})();
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Kreiramo timeline koji se aktivira kada .categories uđe u viewport
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".categories",
+      start: "top 80%", // kad gornji deo sekcije dođe do 80% visine ekrana
+      toggleActions: "play none none none"
+    }
+  });
+
+  // Prvo animiraj <h2>
+/* tl.to(".categories h2", {
+    x: 0,
+    opacity: 1,
+    duration: 3,
+    ease: "sine.inOut",
+    clearProps: "transform"
+  });
+
+  // Zatim animiraj <p>
+  tl.to(".categories p", {
+    x: 0,
+    opacity: 1,
+    duration: 3,
+    ease: "sine.inOut",
+    clearProps: "transform"
+  }, "-=2"); // "-=1" znači da p počinje 1s pre nego što h2 završi (blagi overlap)*/
+  tl.from(".categories h2", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "sine.inOut"
+});
+
+tl.from(".categories p", {
+  x: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "sine.inOut"
+}, "-=0.4");
+
+
+</script>
+
+
+
+<!-- Google Translate skriveni element -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'sr',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+   function translateLanguage(lang) {
+  // Sačuvaj izbor jezika u localStorage
+  localStorage.setItem('selectedLanguage', lang);
+
+  if (lang === 'sr') {
+    // Vrati originalan tekst (ukloni prevod)
+    document.cookie = "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    location.reload(); 
+  } else {
+    // Pokreni prevod
+    var select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+}
+// Pri učitavanju stranice: automatski primeni jezik iz localStorage
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('selectedLanguage') || 'sr';
+  if (savedLang !== 'sr') {
+    var select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = savedLang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+});
+
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- MALI JS za hamburger i auto-zatvaranje pri resize-u -->
+<script>
+  (function(){
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    if (!hamburger || !navbar) return;
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      // kada se otvori meni, pomeri language-switcher u meni (stilovi u CSS)
+      document.body.classList.toggle('menu-open');
+    });
+
+    // zatvori meni kad se klikne na link (mobilno)
+    navbar.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
+      });
+    });
+
+    // na resize > 768 ukloni active (vrati desktop ponašanje)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navbar.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  })();
+</script>
+
+<script>
+/* Robust overlay-based language switcher */
+(function(){
+  function safeQuery(sel){ return document.querySelector(sel); }
+
+  function init() {
+    const lang = safeQuery('.language-switcher');
+    if (!lang) {
+      console.warn('[LangOverlay] .language-switcher not found');
+      return;
+    }
+
+    // Napravi toggle ako ga nema
+    let toggle = lang.querySelector('.lang-toggle-badge');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.className = 'lang-toggle-badge';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-label','Promeni jezik');
+      toggle.innerHTML = '<i class="fas fa-globe"></i>';
+      lang.prepend(toggle);
+    }
+
+    let overlay = null;
+
+    // Helper: ekstraktuj kod jezika iz originalnog img onclick ili data-lang
+    function getLangCodeFromImg(img) {
+      if (!img) return null;
+      const onclick = img.getAttribute('onclick') || '';
+      const m = onclick.match(/translateLanguage\(['"]?([a-z]{2})['"]?\)/i);
+      if (m) return m[1];
+      if (img.dataset && img.dataset.lang) return img.dataset.lang;
+      // fallback: pokušaj iz url-a (npr. /w20/rs.png -> rs)
+      try {
+        const src = img.getAttribute('src') || '';
+        const code = src.replace(/.*\/([a-z]{2})\.(png|webp|jpg|jpeg)$/i, '$1');
+        if (code && code.length===2) return code;
+      } catch(e){}
+      return null;
+    }
+
+    function buildOverlay() {
+      // ukloni postojeći ako postoji
+      if (overlay) overlay.remove();
+
+      overlay = document.createElement('div');
+      overlay.className = 'lang-overlay';
+      // kloniraj sve zastavice iz originalnog .language-switcher (osim toggle dugmeta)
+      const imgs = Array.from(lang.querySelectorAll('img'));
+      if (imgs.length === 0) {
+        // fallback: ako nema zastavica, ukloni overlay
+        return null;
+      }
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.src;
+        clone.alt = img.alt || '';
+        // sačuvaj eventualni data-lang ako postoji
+        const code = getLangCodeFromImg(img);
+        if (code) clone.dataset.lang = code;
+        // klik handler za clone
+        clone.addEventListener('click', function(e){
+          e.stopPropagation();
+          const c = clone.dataset.lang || getLangCodeFromImg(img);
+          if (c) {
+            try { translateLanguage(c); } catch(err){ console.warn('translateLanguage not found', err); }
+          }
+          removeOverlay();
+        });
+        overlay.appendChild(clone);
+      });
+
+      // append overlay to body
+      document.body.appendChild(overlay);
+      return overlay;
+    }
+
+    function removeOverlay() {
+      if (!overlay) return;
+      overlay.remove();
+      overlay = null;
+      // restore focus on toggle
+      toggle.focus();
+    }
+
+    function positionOverlay() {
+      if (!overlay) return;
+      const rect = toggle.getBoundingClientRect();
+      const dropdownRect = overlay.getBoundingClientRect();
+      const dropdownHeight = overlay.scrollHeight || dropdownRect.height;
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      // preferiraj ispod
+      if (spaceBelow >= dropdownHeight + 12) {
+        overlay.style.position = 'fixed';
+        overlay.style.top = (rect.bottom + 8) + 'px';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = '';
+      } else if (spaceAbove >= dropdownHeight + 12) {
+        overlay.style.position = 'fixed';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
+        overlay.style.top = '';
+      } else {
+        // fallback - pozicioniraj ispod i dozvoli skrolovanje u overlayu
+        overlay.style.position = 'fixed';
+        overlay.style.top = (rect.bottom + 8) + 'px';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = '';
+      }
+
+      // osiguraj da overlay ne prelazi desno
+      const rr = overlay.getBoundingClientRect();
+      const overflowRight = rr.right - window.innerWidth;
+      if (overflowRight > 8) {
+        const newLeft = Math.max(8, rect.left - overflowRight - 8);
+        overlay.style.left = newLeft + 'px';
+      }
+    }
+
+    // toggle click
+    function onToggle(e){
+      e.stopPropagation();
+      if (overlay) { removeOverlay(); return; }
+      buildOverlay();
+      requestAnimationFrame(() => positionOverlay());
+    }
+    toggle.addEventListener('click', onToggle);
+    toggle.addEventListener('touchstart', function(e){ e.preventDefault(); onToggle(e); }, {passive:false});
+
+    // klik izvan overlay -> zatvori
+    document.addEventListener('click', function(ev){
+      if (!overlay) return;
+      if (!overlay.contains(ev.target) && ev.target !== toggle) removeOverlay();
+    });
+
+    // ESC zatvara overlay
+    document.addEventListener('keydown', function(e){
+      if (!overlay) return;
+      if (e.key === 'Escape') removeOverlay();
+    });
+
+    // resize -> reposition or remove
+    let rt;
+    window.addEventListener('resize', function(){
+      clearTimeout(rt);
+      rt = setTimeout(() => {
+        if (!overlay) return;
+        // pokušaj da ga pomerimo u viewport, ako nema mesta zatvori
+        positionOverlay();
+      }, 120);
+    });
+
+    // touchmove ili scroll -> zatvori jer pozicija može da se izmeni
+    window.addEventListener('scroll', function(){
+      if (overlay) {
+        // ne zatvaramo odmah, već pomerimo overlay; ali da budemo sigurni,
+        // zatvori ako overlay daleko od viewporta
+        positionOverlay();
+      }
+    }, {passive:true});
+
+    console.log('[LangOverlay] initialized');
+  } // init
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else init();
+
+})();
+</script>
+
+
+
+
+
+
+</body>
+</html>

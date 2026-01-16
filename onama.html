@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="onama.css">
+    <link rel="stylesheet" href="usluge.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+<body>
+    <header class="topbar">
+  <div class="logo">
+     <a href="index.html">    <img src="ChatGPT_Image_Nov_13__2025__08_23_57_AM-removebg-preview.png" alt="Zlatara Logo"></a>
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">POČETNA</a></li>
+      <!-- <li><a href="usluge.html">USLUGE</a></li> -->
+      <!-- <li><a href="edukacija.html">EDUKACIJA</a></li> -->
+      <li><a href="onama.html">O NAMA</a></li>
+      <li><a href="proizvodi.html">KOLEKCIJA</a></li>
+    </ul>
+  </nav>
+
+  <!-- HAMBURGER (sklonićemo ga CSS-om na desktopu) -->
+  <div class="hamburger" aria-label="meni" title="meni">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="language-switcher">
+    <img src="zastava srbija.svg" onclick="translateLanguage('sr')" alt="Srpski">
+    <img src="zastava velike britanije.svg" onclick="translateLanguage('en')" alt="English">
+    <img src="zastava nemacka.webp" onclick="translateLanguage('de')" alt="Deutsch">
+      <img src="ruska zastava.svg" onclick="translateLanguage('ru')" alt="Русский">
+  </div>
+
+</header>
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="about-section">
+  <div class="about-row">
+    <div class="about-text">
+      <h2>Naša priča</h2>
+      <p>
+        Još davne 1986. godine, u srcu Smederevske Palanke, nastaje vizija mladog i ambicioznog zlatara. Učen od najboljih majstora tog doba, njegov cilj je bio jednostavan — stvarati nakit koji nosi dušu i priču. Zlatar „Tamara” tada započinje svoj put, zasnovan na umeću, kvalitetu i poverenju.
+      </p>
+    </div>
+    <div class="about-img">
+      <img src="starazlatara.jpg" alt="Osnivač zlatare">
+    </div>
+  </div>
+
+ 
+</section> -->
+
+<div class="section-heading">
+  <h2>Naše usluge</h2>
+  <div class="section-divider"><span style="background-color: #fdf6e3;">✷</span></div>
+  <p>U ponudi imamo raznovrsne usluge koje će vaš nakit učiniti besprekornim.</p>
+</div>
+
+
+<section class="services-section">
+  <div class="service-block">
+    <div class="service-image">
+      <img src="Alat-za-Popravku-Satova1-600x600-1-removebg-preview.png" alt="Popravka nakita">
+    </div>
+    <div class="service-text">
+      <h2>Popravka nakita</h2>
+      <p>
+        Bez obzira da li imate slomljenu lančić ogrlicu ili trebate da popravite narukvicu, to ne mora da znači kraj vašeg omiljenog komada.
+        Naša usluga popravke lanca nakita sastoji se od pažljivog lemljenja metala koji ponovo povezuje karike svih vrsta za besprekornu restauraciju.
+        Vršimo popravke nakita od zlata ili srebra. Takođe, kod nas možete očistiti vaš nakit i vratiti mu prvobitni sjaj.
+      </p>
+    </div>
+  </div>
+
+  <div class="service-block reverse">
+    <div class="service-image">
+      <div class="slideshow" style="width: 300px;">
+  <img src="rucnoradjennakit/slika12.jpg" class="slide active">
+  <img src="rucnoradjennakit/slika2.jpg" class="slide">
+  <img src="rucnoradjennakit/slika13.jpg" class="slide">
+</div>
+
+    </div>
+    <div class="service-text">
+      <h2>Izrada nakita</h2>
+      <p>
+        Od prve skice do finalnog poliranja, naši ručno izrađeni komadi nakita nose posebnu pažnju i jedinstvenost. Svaki od njih je mali umetnički svet za sebe, stvoren da traje i da bude neponovljiv – uz to, u našoj ponudi ćete pronaći i prelepe gotove komade, pažljivo odabrane da upotpune svaki stil.
+      </p>
+    </div>
+  </div>
+
+ 
+
+  <div class="service-block reverse">
+   <div class="service-text">
+      <h2>Otkup zlata i srebra</h2>
+      <p>
+       Bilo da želite da prodate zlatni ili srebrni nakit, kod nas je svaki komad pažljivo ocenjen. Garantujemo poštenu procenu i sigurnu transakciju, uz profesionalan pristup i potpunu transparentnost.
+      </p>
+    </div> 
+    <div class="service-image">
+      <img src="zlato.png" alt="Dodatne usluge">
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="location-section">
+  <div class="location-wrapper">
+     
+    <div class="location-info">
+      <h2>Naša lokacija</h2>
+      <h3>Novi Sad</h3>
+      <ul>
+        <li><i class="fas fa-home"></i> Hadži Ruvimova 33</li>
+        <li><i class="fas fa-clock"></i> Pon–Pet: 10h – 18h | Subota: 9:30h – 14h</li>
+        <li><i class="fas fa-phone"></i> 063 / 63 00 95</li>
+      </ul>
+    </div>
+   <div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.536936429371!2d19.813842076490243!3d45.257155871071284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b104b4f8d2563%3A0x4309376f6c3ee60a!2sZLATARA%20M!5e0!3m2!1ssr!2srs!4v1763201456466!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer style="background-color: #f9f9f9; color: #444; padding: 50px 20px; margin-top: 60px; border-top: 1px solid #eee; ">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+
+    <!-- Logo i opis -->
+    <div style="flex: 1; min-width: 260px;">
+      <h2 style="color: #d4af37; margin-bottom: 12px; font-size: 22px;">Zlatara M</h2>
+      <p style="font-size: 15px; line-height: 1.8; color:#555;">
+        Sa tradicijom dugom skoro dve decenije, Zlatara M donosi vrhunski kvalitet i bezvremensku
+        eleganciju. Naš nakit je pažljivo izrađen da upotpunjava svaki trenutak – od posebnih prilika do svakodnevnog sjaja.
+      </p>
+    </div>
+
+    <!-- Navigacija -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d4af37; margin-bottom: 12px; font-size: 18px;">Navigacija</h3>
+      <ul style="list-style: none; padding: 0; font-size: 15px; line-height: 2;">
+        <li><a href="index.html" style="color: #444; text-decoration: none;">Početna</a></li>
+        <!-- <li><a href="usluge.html" style="color: #444; text-decoration: none;">Usluge</a></li>
+        <li><a href="edukacija.html" style="color: #444; text-decoration: none;">Edukacija</a></li> -->
+        <li><a href="onama.html" style="color: #444; text-decoration: none;">O nama</a></li>
+        <li><a href="proizvodi.html" style="color: #444; text-decoration: none;">Kolekcija</a></li>
+        
+        
+      </ul>
+    </div>
+
+    <!-- Kontakt i društvene mreže -->
+    <div style="flex: 1; min-width: 240px;">
+      <h3 style="color: #d4af37; margin-bottom: 12px; font-size: 18px;">Kontakt</h3>
+      <p style="font-size: 15px; margin: 6px 0;">📍 Hadži Ruvimova 33, Novi Sad</p>
+      <p style="font-size: 15px; margin: 6px 0;">📞 +381 63 630 095</p>
+      <p style="font-size: 15px; margin: 6px 0;">✉️ info@zlatara.rs</p>
+      <div style="margin-top: 12px; font-size: 20px;">
+        <a href="https://www.facebook.com/zlatara.mj/" target="_blank" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/zlatara_m_j?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #777;">
+    © 2025 Zlatara M. Sva prava zadržana.
+  </div>
+</footer>
+<!-- Google Translate skriveni element -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'sr',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    /*function translateLanguage(lang) {
+      var select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+      }
+    }*/
+   function translateLanguage(lang) {
+  // Sačuvaj izbor jezika u localStorage
+  localStorage.setItem('selectedLanguage', lang);
+
+  if (lang === 'sr') {
+    // Vrati originalan tekst (ukloni prevod)
+    document.cookie = "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    location.reload(); 
+  } else {
+    // Pokreni prevod
+    var select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+}
+// Pri učitavanju stranice: automatski primeni jezik iz localStorage
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('selectedLanguage') || 'sr';
+  if (savedLang !== 'sr') {
+    var select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = savedLang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+});
+
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  (function(){
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    if (!hamburger || !navbar) return;
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      // kada se otvori meni, pomeri language-switcher u meni (stilovi u CSS)
+      document.body.classList.toggle('menu-open');
+    });
+
+    // zatvori meni kad se klikne na link (mobilno)
+    navbar.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
+      });
+    });
+
+    // na resize > 768 ukloni active (vrati desktop ponašanje)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navbar.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  })();
+</script>
+<script>
+/* Robust overlay-based language switcher */
+(function(){
+  function safeQuery(sel){ return document.querySelector(sel); }
+
+  function init() {
+    const lang = safeQuery('.language-switcher');
+    if (!lang) {
+      console.warn('[LangOverlay] .language-switcher not found');
+      return;
+    }
+
+    // Napravi toggle ako ga nema
+    let toggle = lang.querySelector('.lang-toggle-badge');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.className = 'lang-toggle-badge';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-label','Promeni jezik');
+      toggle.innerHTML = '<i class="fas fa-globe"></i>';
+      lang.prepend(toggle);
+    }
+
+    let overlay = null;
+
+    // Helper: ekstraktuj kod jezika iz originalnog img onclick ili data-lang
+    function getLangCodeFromImg(img) {
+      if (!img) return null;
+      const onclick = img.getAttribute('onclick') || '';
+      const m = onclick.match(/translateLanguage\(['"]?([a-z]{2})['"]?\)/i);
+      if (m) return m[1];
+      if (img.dataset && img.dataset.lang) return img.dataset.lang;
+      // fallback: pokušaj iz url-a (npr. /w20/rs.png -> rs)
+      try {
+        const src = img.getAttribute('src') || '';
+        const code = src.replace(/.*\/([a-z]{2})\.(png|webp|jpg|jpeg)$/i, '$1');
+        if (code && code.length===2) return code;
+      } catch(e){}
+      return null;
+    }
+
+    function buildOverlay() {
+      // ukloni postojeći ako postoji
+      if (overlay) overlay.remove();
+
+      overlay = document.createElement('div');
+      overlay.className = 'lang-overlay';
+      // kloniraj sve zastavice iz originalnog .language-switcher (osim toggle dugmeta)
+      const imgs = Array.from(lang.querySelectorAll('img'));
+      if (imgs.length === 0) {
+        // fallback: ako nema zastavica, ukloni overlay
+        return null;
+      }
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.src;
+        clone.alt = img.alt || '';
+        // sačuvaj eventualni data-lang ako postoji
+        const code = getLangCodeFromImg(img);
+        if (code) clone.dataset.lang = code;
+        // klik handler za clone
+        clone.addEventListener('click', function(e){
+          e.stopPropagation();
+          const c = clone.dataset.lang || getLangCodeFromImg(img);
+          if (c) {
+            try { translateLanguage(c); } catch(err){ console.warn('translateLanguage not found', err); }
+          }
+          removeOverlay();
+        });
+        overlay.appendChild(clone);
+      });
+
+      // append overlay to body
+      document.body.appendChild(overlay);
+      return overlay;
+    }
+
+    function removeOverlay() {
+      if (!overlay) return;
+      overlay.remove();
+      overlay = null;
+      // restore focus on toggle
+      toggle.focus();
+    }
+
+    function positionOverlay() {
+      if (!overlay) return;
+      const rect = toggle.getBoundingClientRect();
+      const dropdownRect = overlay.getBoundingClientRect();
+      const dropdownHeight = overlay.scrollHeight || dropdownRect.height;
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      // preferiraj ispod
+      if (spaceBelow >= dropdownHeight + 12) {
+        overlay.style.position = 'fixed';
+        overlay.style.top = (rect.bottom + 8) + 'px';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = '';
+      } else if (spaceAbove >= dropdownHeight + 12) {
+        overlay.style.position = 'fixed';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
+        overlay.style.top = '';
+      } else {
+        // fallback - pozicioniraj ispod i dozvoli skrolovanje u overlayu
+        overlay.style.position = 'fixed';
+        overlay.style.top = (rect.bottom + 8) + 'px';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = '';
+      }
+
+      // osiguraj da overlay ne prelazi desno
+      const rr = overlay.getBoundingClientRect();
+      const overflowRight = rr.right - window.innerWidth;
+      if (overflowRight > 8) {
+        const newLeft = Math.max(8, rect.left - overflowRight - 8);
+        overlay.style.left = newLeft + 'px';
+      }
+    }
+
+    // toggle click
+    function onToggle(e){
+      e.stopPropagation();
+      if (overlay) { removeOverlay(); return; }
+      buildOverlay();
+      requestAnimationFrame(() => positionOverlay());
+    }
+    toggle.addEventListener('click', onToggle);
+    toggle.addEventListener('touchstart', function(e){ e.preventDefault(); onToggle(e); }, {passive:false});
+
+    // klik izvan overlay -> zatvori
+    document.addEventListener('click', function(ev){
+      if (!overlay) return;
+      if (!overlay.contains(ev.target) && ev.target !== toggle) removeOverlay();
+    });
+
+    // ESC zatvara overlay
+    document.addEventListener('keydown', function(e){
+      if (!overlay) return;
+      if (e.key === 'Escape') removeOverlay();
+    });
+
+    // resize -> reposition or remove
+    let rt;
+    window.addEventListener('resize', function(){
+      clearTimeout(rt);
+      rt = setTimeout(() => {
+        if (!overlay) return;
+        // pokušaj da ga pomerimo u viewport, ako nema mesta zatvori
+        positionOverlay();
+      }, 120);
+    });
+
+    // touchmove ili scroll -> zatvori jer pozicija može da se izmeni
+    window.addEventListener('scroll', function(){
+      if (overlay) {
+        // ne zatvaramo odmah, već pomerimo overlay; ali da budemo sigurni,
+        // zatvori ako overlay daleko od viewporta
+        positionOverlay();
+      }
+    }, {passive:true});
+
+    console.log('[LangOverlay] initialized');
+  } // init
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else init();
+
+})();
+</script>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slideshow .slide");
+
+function nextSlide() {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}
+
+setInterval(nextSlide, 4000); // promena svakih 4 sekunde
+</script>
+
+</body>
+</html>

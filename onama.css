@@ -1,0 +1,693 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fdf6e3; 
+  padding: 15px 40px;
+  color: #b58900; /* zlatna */
+  border-bottom: white 2px solid; /* tamnija braon nijansa */
+}
+
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar .logo img {
+  height: 100px; /* prilagodi po potrebi */
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color:  #b58900; /* tamnija braon nijansa */
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+
+
+.about-section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #b58900;
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #b58900;
+}
+
+.about-text p {
+  font-size: 1.5vw;
+  line-height: 1.8;
+  color: #b58900;
+  max-width: 600px;
+}
+
+.about-img {
+  flex: 1;
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-row, .about-row.reverse {
+    flex-direction: column;
+  }
+
+  .about-text, .about-img {
+    text-align: center;
+  }
+}
+
+body{
+    background-color:#fdf6e3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.location-section {
+  /*background-color: #fffefc;*/
+  background-color: transparent;
+  padding: 80px 40px;
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #b58900;
+}
+
+.location-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.location-info {
+  flex: 1 1 350px;
+}
+
+.location-info h2 {
+  font-size: 2.4rem;
+  color: #b58900;
+  margin-bottom: 10px;
+}
+
+.location-info h3 {
+  font-size: 1.6rem;
+  color: #b58900;
+  margin-bottom: 20px;
+}
+
+.location-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #b58900;
+}
+
+.location-info ul li {
+  margin-bottom: 10px;
+}
+
+.location-info i {
+  margin-right: 10px;
+  color: #b19777;
+}
+
+.map-container {
+  flex: 1 1 500px;
+  min-height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+ /* --- Stil za zastavice --- */
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      background: white;
+      padding: 6px 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    .language-switcher img {
+      width: 24px;
+      height: 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      z-index: 11;
+    }
+
+    /* --- Sklanja Google bar i ikonice --- */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    html body > .skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+html {
+    top: 0 !important;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2e6d8; 
+  padding: 15px 40px;
+  color: #d4af37; /* zlatna */
+}
+
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar .logo img {
+  height: 100px; /* prilagodi po potrebi */
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color:  #3b2f2f; /* tamnija braon nijansa */
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+/* --- Stil za zastavice (desktop default, NE fiksira poziciju) --- */
+.language-switcher {
+  position: static;       /* ne fiksiramo desktop, mobile media query će promeniti ponašanje */
+  display: flex;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  align-items: center;
+  z-index: 0;
+}
+
+.language-switcher img {
+  width: 24px;
+  height: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+
+    /* --- Sklanja Google bar i ikonice --- */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    html body > .skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+html {
+    top: 0 !important;
+}
+
+/* --- HAMBURGER (default sakriven za desktop) --- */
+.hamburger {
+  display: none;
+  z-index: 20;
+}
+/* ========== MOBILNI telefonski stilovi (REPLACEMENT) ========== */
+@media (max-width: 768px) {
+
+  /* prikrij desktop navigaciju (prikazaćemo preko .navbar.active) */
+  .navbar ul {
+    display: none;
+  }
+
+  /* TOPBAR: languages LEVO (kompresovano), logo CENTAR, hamburger DESNO */
+  .topbar {
+    position: relative;
+    padding: 20px 32px;
+    height: 80px;
+    align-items: center;
+  }
+
+  /* Kompresovan language-switcher: prikaži samo prvu ikonu, na klik se širi */
+  .language-switcher {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 60;
+    order: 1;
+    cursor: pointer;
+  }
+
+  /* male ikone (default prikaz samo prve) */
+  .language-switcher img {
+    width: 28px;
+    height: 18px;
+    border: 1px solid #ddd;
+    display: inline-block;
+  }
+  /* sakrij sve osim prve (desktop ne dira) */
+  .language-switcher img:not(:first-child) {
+    display: none;
+  }
+
+  /* kada je otvoreno (dodajemo .open) - prikaži sve ikone u koloni */
+  .language-switcher.open {
+    position: absolute;
+    left: 12px;
+    top: 62px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    flex-direction: column;
+    gap: 8px;
+  }
+  .language-switcher.open img {
+    display: block;
+  }
+
+  /* centriraj logo apsolutno u topbaru */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    order: 2;
+    z-index: 65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topbar .logo img {
+    height: 72px; /* smanjeno na mobilu */
+  }
+
+  /* hamburger desno */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #3b2f2f;
+    order: 3;
+    position: relative;
+    right: 8px;
+    z-index: 70;
+    margin-left: auto;
+  }
+
+  /* mobilni meni (prikaže se kada .navbar.active) */
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    background: #f2e6d8;
+    border-radius: 12px;
+    position: absolute;
+    right: 12px;
+    top: 80px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 50;
+    min-width: 200px;
+    display: none;
+  }
+  .navbar.active ul {
+    display: flex;
+  }
+
+  /* Ako je mobilni meni otvoren, daj prostor za jezički meni (ako koristiš body.menu-open) */
+  body.menu-open .language-switcher {
+    position: static;
+    margin-top: 8px;
+    right: auto;
+    top: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 8px;
+  }
+}
+.lang-toggle-badge {
+  display: none;                 /* sakriveno na desktopu */
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2f2f;
+  cursor: pointer;
+  transition: transform .12s ease;
+}
+.lang-toggle-badge:active { transform: scale(.96); }
+.lang-toggle-badge i { font-size: 18px; display:block; line-height:1; }
+
+/* MOBILE OVERRIDE */
+@media (max-width: 768px) {
+  .topbar { position: relative; z-index: 100; }
+
+  /* postavimo .language-switcher kao absolute kontrolu unutar topbara,
+     tako da nikad ne utiče na flow i ne menja visinu topbara */
+  .language-switcher {
+    position: absolute !important;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 120;
+    padding: 0;
+    background: transparent;
+    width: 36px;
+    height: 36px;
+    overflow: visible;
+  }
+
+  /* prikaži samo globus (dugme) umesto zastavica */
+  .lang-toggle-badge { display: inline-flex; background: transparent; box-shadow: none; }
+
+  /* sakrij zastavice dok meni nije otvoren */
+  .language-switcher img {
+    display: none !important;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+
+  /* PLUTAJUCI OBLAK - NE MENJA VISINU TOPBARA */
+  .language-switcher.open {
+    position: fixed;               /* fixed -> držimo ga u viewport prostoru */
+    left: 12px;
+    /* top ili bottom ćemo setovati dinamički iz JS-a; ovde fallback */
+    top: calc(100% + 8px);
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.18);
+    z-index: 140;
+    min-width: 140px;
+    max-height: calc(100vh - 90px);
+    overflow: auto;
+  }
+
+  .language-switcher.open img {
+    display: block !important;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+
+  /* sprečavamo da topbar "skače" - fallback min-height */
+  .topbar { min-height: 56px; }
+  .topbar { position: relative !important; z-index: 200 !important; }
+
+  /* kada je otvoren overlay, pustimo JS da postavi top; resetujemo calc rule koji ga je pomerao dole */
+  .language-switcher.open {
+    position: fixed !important;   /* JS će ažurirati top-left */
+    top: auto !important;
+    left: 12px !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+
+  /* i osiguravamo da u closed state nema neželjenog transform-a kad JS radi pixel positioning */
+  .language-switcher { transform: none !important; }
+}
+/* ===== LANGUAGE SWITCHER OVERLAY (append) ===== */
+.lang-overlay {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #f2e6d8; /* ili stavi istu boju koju koristi tvoj sajt za background */
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.15);
+  z-index: 9999;
+  min-width: 100px;       /* smanjeno da nema praznog prostora desno */
+  max-width: 140px;       /* sprečava preširoko */
+  align-items: center;    /* centriraj zastave */
+}
+
+.lang-overlay img {
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: block;
+}
+
+.lang-overlay img {
+  width: 36px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  display: block;
+}
+
+/* malo lepši hover */
+.lang-overlay img:hover {
+  transform: translateY(-2px);
+}
+
+/* zadržavamo globus stil (ako još nema) */
+.lang-toggle-badge { 
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2f2f;
+  cursor: pointer;
+}
+
+.lang-overlay img {
+  width: 32px;
+  height: 20px;
+}
+@media (min-width: 769px) {
+  .lang-toggle-badge {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #3b2f2f;
+  }
+
+  .navbar {
+    display: none;            /* default sakriveno */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #f2e6d8;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar.active {
+    display: flex;
+    height: 0px;  
+    padding: 0px;/* ovde se otvara kad klikneš */
+  }
+  
+  /***/
+
+
+  /* Mobile overlay meni — staviti unutar ili posle @media (max-width:768px) */
+
+
+
+}
+
+
+/* ukloni fokus krug sa globusa (samo vizuelno; :focus-visible za pristupačnost) */
+.lang-toggle-badge:focus,
+.language-switcher button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.lang-toggle-badge:focus-visible {
+  outline: 2px solid rgba(181,142,95,0.35);
+  border-radius: 50%;
+}
+
+.language-switcher button {
+  border: none;
+  outline: none;
+}
+
+.language-switcher button:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* SLIDESHOW */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 230px;     /* možeš menjati visinu */
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* Prva slika startuje */
+.slideshow img.active {
+  opacity: 1;
+}
+footer{
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #b58900;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}

@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <title>Proizvodi - Zlatara</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #faf7f0; /* svetla krem pozadina */
+      color: #333;
+    }
+
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+ 
+}
+body{
+    background-color:#f2e6d8;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2e6d8; 
+  padding: 15px 40px;
+  color: #d4af37; /* zlatna */
+}
+
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar .logo img {
+  height: 100px; /* prilagodi po potrebi */
+}
+
+.brand-name {
+  font-size: 16px;
+  line-height: 1.2;
+  color:  #3b2f2f;;
+}
+
+.brand-name strong {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #3b2f2f; /* tamnija braon nijansa */
+}
+
+.brand-name .subtext {
+  font-size: 14px;
+  font-weight: 300;
+  color: #bfae84; /* svetlija zlatna */
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color:  #3b2f2f; /* tamnija braon nijansa */
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+    footer {
+      font-size: 0.9em;
+      border-top: 1px solid #e0d9c8;
+      background-color: #fff;
+      padding: 15px;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Filteri */
+    .filters {
+      flex: 1 1 220px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      height: fit-content;
+    }
+
+    .filters h3 { margin-bottom: 15px; font-size: 1.2em; color: #333; }
+    .filters h4 { margin-top: 15px; font-size: 1em; color: #555; }
+    .filters label { display: block; margin: 6px 0; cursor: pointer; }
+    .filters input[type="range"] { width: 100%; }
+
+    /* Lista proizvoda */
+    .product-list {
+      flex: 3 1 600px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-item {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+    }
+
+    .product-item img {
+  width: 100%;
+  height: 220px;          /* izaberi visinu koja ti odgovara (npr 200–260px) */
+  object-fit: cover;      /* sve slike iste veličine, crop po potrebi */
+  object-position: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+    .product-item h4 { margin: 10px 0 5px 0; font-size: 1.1em; color: #333; }
+    .product-item p { margin: 5px 0; font-size: 0.95em; color: #555; }
+    .product-item .price {
+      color: #d4af37; /* zlatna cena */
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .product-item a {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #d4af37; /* zlatno dugme */
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      text-decoration: none;
+    }
+
+    .product-item button:hover {
+      background-color: #b08b2f;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      background: #d4af37;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+    }
+
+    /* Responziv */
+    @media(max-width: 900px){
+      .container { flex-direction: column; }
+      .filters { width: 100%; margin-bottom: 20px; }
+    }
+     /* --- Stil za zastavice --- */
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      background: white;
+      padding: 6px 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    .language-switcher img {
+      width: 24px;
+      height: 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      z-index: 11;
+    }
+
+    /* --- Sklanja Google bar i ikonice --- */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    html body > .skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+html {
+    top: 0 !important;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2e6d8; 
+  padding: 15px 40px;
+  color: #d4af37; /* zlatna */
+}
+
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar .logo img {
+  height: 100px; /* prilagodi po potrebi */
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color:  #3b2f2f; /* tamnija braon nijansa */
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+/* --- Stil za zastavice (desktop default, NE fiksira poziciju) --- */
+.language-switcher {
+  position: static;       /* ne fiksiramo desktop, mobile media query će promeniti ponašanje */
+  display: flex;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  align-items: center;
+  z-index: 0;
+}
+
+.language-switcher img {
+  width: 24px;
+  height: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+
+    /* --- Sklanja Google bar i ikonice --- */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    .goog-te-gadget-icon {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    html body > .skiptranslate,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+html {
+    top: 0 !important;
+}
+
+/* --- HAMBURGER (default sakriven za desktop) --- */
+.hamburger {
+  display: none;
+  z-index: 20;
+}
+/* ========== MOBILNI telefonski stilovi (REPLACEMENT) ========== */
+@media (max-width: 768px) {
+
+  /* prikrij desktop navigaciju (prikazaćemo preko .navbar.active) */
+  .navbar ul {
+    display: none;
+  }
+
+  /* TOPBAR: languages LEVO (kompresovano), logo CENTAR, hamburger DESNO */
+  .topbar {
+    position: relative;
+    padding: 20px 32px;
+    height: 80px;
+    align-items: center;
+  }
+
+  /* Kompresovan language-switcher: prikaži samo prvu ikonu, na klik se širi */
+  .language-switcher {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 60;
+    order: 1;
+    cursor: pointer;
+  }
+
+  /* male ikone (default prikaz samo prve) */
+  .language-switcher img {
+    width: 28px;
+    height: 18px;
+    border: 1px solid #ddd;
+    display: inline-block;
+  }
+  /* sakrij sve osim prve (desktop ne dira) */
+  .language-switcher img:not(:first-child) {
+    display: none;
+  }
+
+  /* kada je otvoreno (dodajemo .open) - prikaži sve ikone u koloni */
+  .language-switcher.open {
+    position: absolute;
+    left: 12px;
+    top: 62px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    flex-direction: column;
+    gap: 8px;
+  }
+  .language-switcher.open img {
+    display: block;
+  }
+
+  /* centriraj logo apsolutno u topbaru */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    order: 2;
+    z-index: 65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .topbar .logo img {
+    height: 72px; /* smanjeno na mobilu */
+  }
+
+  /* hamburger desno */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #3b2f2f;
+    order: 3;
+    position: relative;
+    right: 8px;
+    z-index: 70;
+    margin-left: auto;
+  }
+
+  /* mobilni meni (prikaže se kada .navbar.active) */
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    background: #f2e6d8;
+    border-radius: 12px;
+    position: absolute;
+    right: 12px;
+    top: 80px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 50;
+    min-width: 200px;
+    display: none;
+  }
+  .navbar.active ul {
+    display: flex;
+  }
+
+  /* Ako je mobilni meni otvoren, daj prostor za jezički meni (ako koristiš body.menu-open) */
+  body.menu-open .language-switcher {
+    position: static;
+    margin-top: 8px;
+    right: auto;
+    top: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 8px;
+  }
+}
+.lang-toggle-badge {
+  display: none;                 /* sakriveno na desktopu */
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2f2f;
+  cursor: pointer;
+  transition: transform .12s ease;
+}
+.lang-toggle-badge:active { transform: scale(.96); }
+.lang-toggle-badge i { font-size: 18px; display:block; line-height:1; }
+
+/* MOBILE OVERRIDE */
+@media (max-width: 768px) {
+  .topbar { position: relative; z-index: 100; }
+
+  /* postavimo .language-switcher kao absolute kontrolu unutar topbara,
+     tako da nikad ne utiče na flow i ne menja visinu topbara */
+  .language-switcher {
+    position: absolute !important;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 120;
+    padding: 0;
+    background: transparent;
+    width: 36px;
+    height: 36px;
+    overflow: visible;
+  }
+
+  /* prikaži samo globus (dugme) umesto zastavica */
+  .lang-toggle-badge { display: inline-flex; background: transparent; box-shadow: none; }
+
+  /* sakrij zastavice dok meni nije otvoren */
+  .language-switcher img {
+    display: none !important;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+
+  /* PLUTAJUCI OBLAK - NE MENJA VISINU TOPBARA */
+  .language-switcher.open {
+    position: fixed;               /* fixed -> držimo ga u viewport prostoru */
+    left: 12px;
+    /* top ili bottom ćemo setovati dinamički iz JS-a; ovde fallback */
+    top: calc(100% + 8px);
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.18);
+    z-index: 140;
+    min-width: 140px;
+    max-height: calc(100vh - 90px);
+    overflow: auto;
+  }
+
+  .language-switcher.open img {
+    display: block !important;
+    width: 36px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+
+  /* sprečavamo da topbar "skače" - fallback min-height */
+  .topbar { min-height: 56px; }
+  .topbar { position: relative !important; z-index: 200 !important; }
+
+  /* kada je otvoren overlay, pustimo JS da postavi top; resetujemo calc rule koji ga je pomerao dole */
+  .language-switcher.open {
+    position: fixed !important;   /* JS će ažurirati top-left */
+    top: auto !important;
+    left: 12px !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+
+  /* i osiguravamo da u closed state nema neželjenog transform-a kad JS radi pixel positioning */
+  .language-switcher { transform: none !important; }
+}
+/* ===== LANGUAGE SWITCHER OVERLAY (append) ===== */
+.lang-overlay {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #f2e6d8; /* ili stavi istu boju koju koristi tvoj sajt za background */
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.15);
+  z-index: 9999;
+  min-width: 100px;       /* smanjeno da nema praznog prostora desno */
+  max-width: 140px;       /* sprečava preširoko */
+  align-items: center;    /* centriraj zastave */
+}
+
+.lang-overlay img {
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: block;
+}
+
+.lang-overlay img {
+  width: 36px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  display: block;
+}
+
+/* malo lepši hover */
+.lang-overlay img:hover {
+  transform: translateY(-2px);
+}
+
+/* zadržavamo globus stil (ako još nema) */
+.lang-toggle-badge { 
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2f2f;
+  cursor: pointer;
+}
+
+.lang-overlay img {
+  width: 32px;
+  height: 20px;
+}
+@media (min-width: 769px) {
+  .lang-toggle-badge {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: #3b2f2f;
+  }
+
+  .navbar {
+    display: none;            /* default sakriveno */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #f2e6d8;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar.active {
+    display: flex;
+    height: 0px;  
+    padding: 0px;/* ovde se otvara kad klikneš */
+  }
+  
+  /***/
+
+
+  /* Mobile overlay meni — staviti unutar ili posle @media (max-width:768px) */
+
+
+
+}
+
+
+/* ukloni fokus krug sa globusa (samo vizuelno; :focus-visible za pristupačnost) */
+.lang-toggle-badge:focus,
+.language-switcher button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.lang-toggle-badge:focus-visible {
+  outline: 2px solid rgba(181,142,95,0.35);
+  border-radius: 50%;
+}
+
+.language-switcher button {
+  border: none;
+  outline: none;
+}
+
+.language-switcher button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.navbar a {
+    text-decoration: none;
+    color: #b58900;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+  </style>
+</head>
+<body>
+
+ <header class="topbar">
+  <div class="logo">
+     <a href="index.html">    <img src="ChatGPT_Image_Nov_13__2025__08_23_57_AM-removebg-preview.png" alt="Zlatara Logo"></a>
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">POČETNA</a></li>
+      <!-- <li><a href="usluge.html">USLUGE</a></li> -->
+      <!-- <li><a href="edukacija.html">EDUKACIJA</a></li> -->
+      <li><a href="onama.html">O NAMA</a></li>
+      <li><a href="proizvodi.html">KOLEKCIJA</a></li>
+    </ul>
+  </nav>
+
+  <!-- HAMBURGER (sklonićemo ga CSS-om na desktopu) -->
+  <div class="hamburger" aria-label="meni" title="meni">
+    <i class="fas fa-bars"></i>
+  </div>
+
+<div class="language-switcher">
+    <img src="zastava srbija.svg" onclick="translateLanguage('sr')" alt="Srpski">
+    <img src="zastava velike britanije.svg" onclick="translateLanguage('en')" alt="English">
+    <img src="zastava nemacka.webp" onclick="translateLanguage('de')" alt="Deutsch">
+    <img src="ruska zastava.svg" onclick="translateLanguage('ru')" alt="Русский">
+  </div>
+
+</header>
+
+<div class="container">
+  <!-- Filteri -->
+  <aside class="filters">
+    <h3>Filteri</h3>
+    <div class="filter-category">
+      <h4>Kategorija</h4>
+      <label><input type="checkbox" class="filter" data-category="prsten">Prstenje</label>
+      <label><input type="checkbox" class="filter" data-category="ogrlice"> Ogrlice</label>
+      <label><input type="checkbox" class="filter" data-category="prvi gram"> Prvi Gram</label>
+      <label><input type="checkbox" class="filter" data-category="privezak"> Privesci</label>
+      <label><input type="checkbox" class="filter" data-category="minđuše"> Minđuše</label>
+    </div>
+    <div class="filter-price">
+      <h4>Gramaža do</h4>
+      <input type="range" id="priceRange" min="0" max="5" step="0.1" value="5">
+      <span id="priceValue">5</span> g</span>
+    </div>
+    <!-- <div class="filter-material">
+      <h4>Materijal</h4>
+      <label><input type="checkbox" class="filter" data-material="zlato"> Zlato</label>
+      <label><input type="checkbox" class="filter" data-material="srebro"> Srebro</label>
+      <label><input type="checkbox" class="filter" data-material="platina"> Platina</label>
+    </div> -->
+  </aside>
+
+  <!-- Lista proizvoda -->
+  <main class="product-list" id="productList"></main>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeModal">&times;</button>
+    <h3 id="modalTitle"></h3>
+    <img id="modalImg" src="" alt="">
+    <p id="modalDesc"></p>
+    <p id="modalPrice"></p>
+  </div>
+</div>
+
+<footer style="background-color: #f9f9f9; color: #444; padding: 50px 20px; margin-top: 60px; border-top: 1px solid #eee; font-family: 'Segoe UI', sans-serif;" id="footer">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+
+    <!-- Logo i opis -->
+    <div style="flex: 1; min-width: 260px;">
+      <h2 style="color: #d4af37; margin-bottom: 12px; font-size: 22px;">Zlatara M</h2>
+      <p style="font-size: 15px; line-height: 1.8; color:#555;">
+        Sa tradicijom dugom skoro dve decenije, Zlatara M donosi vrhunski kvalitet i bezvremensku
+        eleganciju. Naš nakit je pažljivo izrađen da upotpunjava svaki trenutak – od posebnih prilika do svakodnevnog sjaja.
+      </p>
+    </div>
+
+    <!-- Navigacija -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="color: #d4af37; margin-bottom: 12px; font-size: 18px;">Navigacija</h3>
+      <ul style="list-style: none; padding: 0; font-size: 15px; line-height: 2;">
+        <li><a href="index.html" style="color: #444; text-decoration: none;">Početna</a></li>
+        <!-- <li><a href="usluge.html" style="color: #444; text-decoration: none;">Usluge</a></li>
+        <li><a href="edukacija.html" style="color: #444; text-decoration: none;">Edukacija</a></li> -->
+        <li><a href="onama.html" style="color: #444; text-decoration: none;">O nama</a></li>
+        <li><a href="proizvodi.html" style="color: #444; text-decoration: none;">Kolekcija</a></li>
+        
+        
+      </ul>
+    </div>
+
+    <!-- Kontakt i društvene mreže -->
+    <div style="flex: 1; min-width: 240px;">
+      <h3 style="color: #d4af37; margin-bottom: 12px; font-size: 18px;">Kontakt</h3>
+      <p style="font-size: 15px; margin: 6px 0;">📍 Hadži Ruvimova 33, Novi Sad</p>
+      <p style="font-size: 15px; margin: 6px 0;">📞 +381 63 630 095</p>
+      <p style="font-size: 15px; margin: 6px 0;">✉️ info@zlatara.rs</p>
+      <div style="margin-top: 12px; font-size: 20px;">
+        <a href="https://www.facebook.com/zlatara.mj/" target="_blank" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/zlatara_m_j?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="margin-right: 14px; color: #d4af37; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #777;">
+    © 2025 Zlatara M. Sva prava zadržana.
+  </div>
+</footer>
+
+<script>
+  const products = [
+     {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:2.9, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika48.png"},
+              {id:23, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price: 2.67, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika49.png"},
+        {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.4, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika50.png"},
+         {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.2, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika51.png"},
+          
+    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.4, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
+       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.24, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
+      
+    {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.75, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika13.png"},
+          
+    {id:14, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:2.42, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatannakit/slika5.png"},
+    {id:14, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:2.85, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatannakit/slika285.png"},
+    {id:14, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:2.73, desc:"Dekorativni zlatnik za kolekcionare", img:"zlatannakit/slika273.png"},
+    {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.83, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/slika1.png"},
+   
+     {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.77, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/slika277.png"},
+    {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.1, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/slika210.png"},
+    {id:1, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.85, desc:"Elegantni prsten sa dijamantom", img:"zlatannakit/2851.png"},
+    // {id:7, title:"Prsten od belog zlata sa cvetnim motivima", category:"prstenje", material:"zlato", price:85000, desc:"Prsten sa crvenim rubinom",img:"zlatannakit/slika2.png"},
+   
+
+    {id:9, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.67, desc:"Luksuzni zlatni sat sa kožnim kaišem",img:"zlatannakit/slika3.png"},
+     {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:3.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika15.png"},
+       {id:23, title:"Prsten od belog zlata", category:"prsten", material:"belo zlato", price:2.64, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika16.png"},
+       
+ 
+     {id:12, title:"Prsten od žutog zlata", category:"prsten", material:"žuto zlato", price:2.7, desc:"Retro dizajn zlatne ogrlice", img:"zlatannakit/slika4.png"},
+  
+        // {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika11.png"},
+                   {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:0.67, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika8.png"},
+
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:0.67, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika12.png"},
+          
+   
+   
+    
+    // {id:20, title:"Prsten od žutog zlata sa cirkonom", category:"prstenje", material:"zlato", price:65000, desc:"Klasična zlatna narukvica", img:"zlatannakit/slika7.png"},
+    
+   
+   
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.71, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika9.png"},
+{id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.11, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika1111.png"},
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:1.23, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika24.png"},
+          {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:4.19, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika25.png"},
+          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:0.81, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika26.png"},
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:0.81, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika27.png"},
+       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:0.88, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika28.png"},
+         {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:0.85, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika085.png"},
+       {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:0.95, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika55.png"},
+         {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:0.71, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika56.png"},
+          {id:23, title:"Minđuše od žutog zlata", category:"minđuše", material:"žuto zlato", price:1.09, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika57.png"},
+ {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"belo zlato", price:0.84, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika084.png"},
+      {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"žuto zlato", price:0.7, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika59.png"},
+       {id:23, title:"Minđuše od belog zlata", category:"minđuše", material:"žuto zlato", price:1.37, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika60.png"},
+           {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:0.35, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika035.png"},
+      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:0.5, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika34.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:8.08, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika35.png"},
+         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:3.31, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika36.png"},
+          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:2.9, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika37.png"},
+           {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:0.34, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika38.png"},
+       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.09, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika39.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.94, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika40.png"},
+         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:2.24, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika41.png"},
+          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:3.48, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika42.png"},
+          {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:3.66, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika43.png"},
+      // {id:23, title:"Minđuše od belog zlata ukrašene cirkonima", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika44.png"},
+       {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:2.28, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika45.png"},
+        {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:0.51, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika46.png"},
+                {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1.03, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika67.png"},
+  {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:0.38, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika038.png"},
+         {id:23, title:"Privezak od žutog zlata", category:"privezak", material:"žuto zlato", price:1, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika29.png"},
+         {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:1, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika30.png"},
+          {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:0.52, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika31.png"},
+          // {id:23, title:"Ženska ogrlica od žutog zlata sa priveskom u obliku krsta", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika32.png"},
+      {id:23, title:"Privezak od belog zlata", category:"privezak", material:"belo zlato", price:0.33, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika33.png"},
+        //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika47.png"},
+        //  {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika52.png"},
+           {id:23, title:"Moj prvi gram za dečake", category:"prvi gram", material:"žuto zlato", price:1, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika53.png"},
+       {id:23, title:"Moj prvi gram za devojčice", category:"prvi gram", material:"žuto zlato", price:1, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika54.png"},
+       // {id:23, title:"Zlatna ogrlica sa smaragdom", category:"ogrlice", material:"zlato", price:95000, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika61.png"},
+         {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.65, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika62.png"},
+           {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:2.29, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika229.png"},
+          {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:2.36, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika63.png"},
+          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.72, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika64.png"},
+          {id:23, title:"Ogrlica od belog zlata", category:"ogrlice", material:"belo zlato", price:1.65, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika65.png"},
+            {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:1.7, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika170.png"},
+             {id:23, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:1.74, desc:"Zlatna ogrlica sa zelenim smaragdom", img:"zlatannakit/slika10.png"},
+                 {id:17, title:"Ogrlica od žutog zlata", category:"ogrlice", material:"žuto zlato", price:2.09, desc:"Elegantni zlatni sat za sve prilike", img:"zlatannakit/slika6.png"}
+
+          
+];
+
+  const productList = document.getElementById('productList');
+  const priceRange = document.getElementById('priceRange');
+  const priceValue = document.getElementById('priceValue');
+
+  function displayProducts() {
+    const categoryFilters = Array.from(document.querySelectorAll('.filter[data-category]:checked')).map(f=>f.dataset.category);
+    const materialFilters = Array.from(document.querySelectorAll('.filter[data-material]:checked')).map(f=>f.dataset.material);
+    const maxPrice = parseFloat(priceRange.value);
+
+    productList.innerHTML = '';
+
+    const filtered = products.filter(p=>{
+      return (categoryFilters.length === 0 || categoryFilters.includes(p.category)) &&
+             (materialFilters.length === 0 || materialFilters.includes(p.material)) &&
+             p.price <= maxPrice;
+    });
+
+    filtered.forEach(p=>{
+      const div = document.createElement('div');
+      div.className = 'product-item';
+      div.innerHTML = `
+        <img src="${p.img}" alt="${p.title}">
+        <h4>${p.title}</h4>
+       
+        <p class="price">${p.price.toLocaleString('sr-RS')} g</p>
+         <a href="#footer">Kontaktirajte nas</a>
+      `;
+      productList.appendChild(div);
+    });
+  }
+
+  document.querySelectorAll('.filter').forEach(f=>f.addEventListener('change', displayProducts));
+  priceRange.addEventListener('input', ()=>{
+    priceValue.textContent = priceRange.value.toLocaleString('sr-RS')+' g';
+    displayProducts();
+  });
+
+  const modal = document.getElementById('productModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImg = document.getElementById('modalImg');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalPrice = document.getElementById('modalPrice');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  function openModal(id){
+    const p = products.find(pr=>pr.id===id);
+    modalTitle.textContent = p.title;
+    modalImg.src = p.img;
+    modalDesc.textContent = p.desc;
+    modalPrice.textContent = p.price.toLocaleString('sr-RS')+' RSD';
+    modal.style.display = 'flex';
+  }
+
+  closeModalBtn.addEventListener('click', ()=>{ modal.style.display='none'; });
+  window.addEventListener('click', e=>{ if(e.target===modal) modal.style.display='none'; });
+
+  displayProducts();
+</script>
+<!-- Google Translate skriveni element -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'sr',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    /*function translateLanguage(lang) {
+      var select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+      }
+    }*/
+   function translateLanguage(lang) {
+  // Sačuvaj izbor jezika u localStorage
+  localStorage.setItem('selectedLanguage', lang);
+
+  if (lang === 'sr') {
+    // Vrati originalan tekst (ukloni prevod)
+    document.cookie = "googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    location.reload(); 
+  } else {
+    // Pokreni prevod
+    var select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+}
+// Pri učitavanju stranice: automatski primeni jezik iz localStorage
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('selectedLanguage') || 'sr';
+  if (savedLang !== 'sr') {
+    var select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = savedLang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+});
+
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  (function(){
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    if (!hamburger || !navbar) return;
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      // kada se otvori meni, pomeri language-switcher u meni (stilovi u CSS)
+      document.body.classList.toggle('menu-open');
+    });
+
+    // zatvori meni kad se klikne na link (mobilno)
+    navbar.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
+      });
+    });
+
+    // na resize > 768 ukloni active (vrati desktop ponašanje)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        navbar.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  })();
+</script>
+<script>
+/* Robust overlay-based language switcher */
+(function(){
+  function safeQuery(sel){ return document.querySelector(sel); }
+
+  function init() {
+    const lang = safeQuery('.language-switcher');
+    if (!lang) {
+      console.warn('[LangOverlay] .language-switcher not found');
+      return;
+    }
+
+    // Napravi toggle ako ga nema
+    let toggle = lang.querySelector('.lang-toggle-badge');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.className = 'lang-toggle-badge';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-label','Promeni jezik');
+      toggle.innerHTML = '<i class="fas fa-globe"></i>';
+      lang.prepend(toggle);
+    }
+
+    let overlay = null;
+
+    // Helper: ekstraktuj kod jezika iz originalnog img onclick ili data-lang
+    function getLangCodeFromImg(img) {
+      if (!img) return null;
+      const onclick = img.getAttribute('onclick') || '';
+      const m = onclick.match(/translateLanguage\(['"]?([a-z]{2})['"]?\)/i);
+      if (m) return m[1];
+      if (img.dataset && img.dataset.lang) return img.dataset.lang;
+      // fallback: pokušaj iz url-a (npr. /w20/rs.png -> rs)
+      try {
+        const src = img.getAttribute('src') || '';
+        const code = src.replace(/.*\/([a-z]{2})\.(png|webp|jpg|jpeg)$/i, '$1');
+        if (code && code.length===2) return code;
+      } catch(e){}
+      return null;
+    }
+
+    function buildOverlay() {
+      // ukloni postojeći ako postoji
+      if (overlay) overlay.remove();
+
+      overlay = document.createElement('div');
+      overlay.className = 'lang-overlay';
+      // kloniraj sve zastavice iz originalnog .language-switcher (osim toggle dugmeta)
+      const imgs = Array.from(lang.querySelectorAll('img'));
+      if (imgs.length === 0) {
+        // fallback: ako nema zastavica, ukloni overlay
+        return null;
+      }
+      imgs.forEach((img) => {
+        const clone = document.createElement('img');
+        clone.src = img.src;
+        clone.alt = img.alt || '';
+        // sačuvaj eventualni data-lang ako postoji
+        const code = getLangCodeFromImg(img);
+        if (code) clone.dataset.lang = code;
+        // klik handler za clone
+        clone.addEventListener('click', function(e){
+          e.stopPropagation();
+          const c = clone.dataset.lang || getLangCodeFromImg(img);
+          if (c) {
+            try { translateLanguage(c); } catch(err){ console.warn('translateLanguage not found', err); }
+          }
+          removeOverlay();
+        });
+        overlay.appendChild(clone);
+      });
+
+      // append overlay to body
+      document.body.appendChild(overlay);
+      return overlay;
+    }
+
+    function removeOverlay() {
+      if (!overlay) return;
+      overlay.remove();
+      overlay = null;
+      // restore focus on toggle
+      toggle.focus();
+    }
+
+    function positionOverlay() {
+      if (!overlay) return;
+      const rect = toggle.getBoundingClientRect();
+      const dropdownRect = overlay.getBoundingClientRect();
+      const dropdownHeight = overlay.scrollHeight || dropdownRect.height;
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      // preferiraj ispod
+      if (spaceBelow >= dropdownHeight + 12) {
+        overlay.style.position = 'fixed';
+        overlay.style.top = (rect.bottom + 8) + 'px';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = '';
+      } else if (spaceAbove >= dropdownHeight + 12) {
+        overlay.style.position = 'fixed';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
+        overlay.style.top = '';
+      } else {
+        // fallback - pozicioniraj ispod i dozvoli skrolovanje u overlayu
+        overlay.style.position = 'fixed';
+        overlay.style.top = (rect.bottom + 8) + 'px';
+        overlay.style.left = Math.max(8, rect.left) + 'px';
+        overlay.style.bottom = '';
+      }
+
+      // osiguraj da overlay ne prelazi desno
+      const rr = overlay.getBoundingClientRect();
+      const overflowRight = rr.right - window.innerWidth;
+      if (overflowRight > 8) {
+        const newLeft = Math.max(8, rect.left - overflowRight - 8);
+        overlay.style.left = newLeft + 'px';
+      }
+    }
+
+    // toggle click
+    function onToggle(e){
+      e.stopPropagation();
+      if (overlay) { removeOverlay(); return; }
+      buildOverlay();
+      requestAnimationFrame(() => positionOverlay());
+    }
+    toggle.addEventListener('click', onToggle);
+    toggle.addEventListener('touchstart', function(e){ e.preventDefault(); onToggle(e); }, {passive:false});
+
+    // klik izvan overlay -> zatvori
+    document.addEventListener('click', function(ev){
+      if (!overlay) return;
+      if (!overlay.contains(ev.target) && ev.target !== toggle) removeOverlay();
+    });
+
+    // ESC zatvara overlay
+    document.addEventListener('keydown', function(e){
+      if (!overlay) return;
+      if (e.key === 'Escape') removeOverlay();
+    });
+
+    // resize -> reposition or remove
+    let rt;
+    window.addEventListener('resize', function(){
+      clearTimeout(rt);
+      rt = setTimeout(() => {
+        if (!overlay) return;
+        // pokušaj da ga pomerimo u viewport, ako nema mesta zatvori
+        positionOverlay();
+      }, 120);
+    });
+
+    // touchmove ili scroll -> zatvori jer pozicija može da se izmeni
+    window.addEventListener('scroll', function(){
+      if (overlay) {
+        // ne zatvaramo odmah, već pomerimo overlay; ali da budemo sigurni,
+        // zatvori ako overlay daleko od viewporta
+        positionOverlay();
+      }
+    }, {passive:true});
+
+    console.log('[LangOverlay] initialized');
+  } // init
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else init();
+
+})();
+</script>
+
+</body>
+</html>
